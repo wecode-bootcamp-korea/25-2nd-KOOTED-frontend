@@ -1,0 +1,65 @@
+@import '../../styles/variables.scss';
+
+.Footer {
+  @include flex-center;
+  flex-direction: column;
+
+  .footerMenu {
+    @include flex-center;
+    font-size: 14px;
+    padding: 15px 0;
+
+    img {
+      width: 50px;
+    }
+
+    .logo {
+      margin-right: 40px;
+      font-size: 20px;
+      font-weight: 600;
+      color: #000000;
+    }
+
+    .footerMenuItem {
+      margin: 0 25px;
+    }
+  }
+
+  .footerMenuIcons {
+    margin-left: 200px;
+    transform: scale(1.4);
+    color: rgba(0, 0, 0, 0.5);
+
+    i {
+      margin: 0 4px;
+    }
+  }
+
+  .footerBorder {
+    border-top: 1px solid $theme-color-border;
+    width: 1050px;
+    margin-left: 30px;
+  }
+
+  .footerInfo {
+    @include flex-center;
+    flex-direction: row;
+    padding: 20px 0;
+    margin-left: 30px;
+
+    .footerInfoContent {
+      font-size: 11px;
+      line-height: 18px;
+      color: rgba(0, 0, 0, 0.6);
+    }
+
+    .transferLanguage {
+      width: 220px;
+      margin-left: 100px;
+      border: none;
+      background-color: #f2f4f7;
+      color: rgba(0, 0, 0, 0.8);
+      padding: 10px 10px;
+    }
+  }
+}
