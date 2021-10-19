@@ -7,6 +7,7 @@ import CompanyDetail from './pages/CompanyDetail/CompanyDetail';
 import Mypage from './pages/Mypage/Mypage';
 import Footer from './components/Footer/Footer';
 import ResumeList from './pages/ResumeList/ResumeList';
+import OAuthKakao from './components/Login/OAuthKakao';
 
 class Routes extends React.Component {
   render() {
@@ -19,6 +20,7 @@ class Routes extends React.Component {
           <Route exact path="/wd-detail" component={CompanyDetail} />
           <Route exact path="/wd-mypage" component={Mypage} />
           <Route exact path="/wd-resume-list" component={ResumeList} />
+          <Route path="/oauth" component={OAuthKakao} />
         </Switch>
         <Footer />
       </Router>
