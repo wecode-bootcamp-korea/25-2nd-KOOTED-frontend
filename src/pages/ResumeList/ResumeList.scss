@@ -1,0 +1,49 @@
+@import '../../styles/variables.scss';
+
+.ResumeList {
+  height: 100vh;
+  margin-top: 50px;
+  padding: 0 190px;
+  background: $theme-background-color;
+
+  .resumeListHeader {
+    @include flex-space-between;
+    padding: 20px 10px 10px 10px;
+    font-weight: 600;
+
+    .headerIntro {
+      color: $theme-color;
+      cursor: pointer;
+      margin-right: 40px;
+    }
+  }
+
+  .resumeListBody {
+    display: flex;
+    flex-wrap: wrap;
+
+    .addResume {
+      @include flex-center;
+      flex-direction: column;
+      width: fit-content;
+      padding: 40px 75px;
+      margin: 10px;
+      cursor: pointer;
+      border: 1px solid $theme-color-border;
+      background-color: #ffffff;
+
+      i {
+        background-color: $theme-color;
+        color: #ffffff;
+        font-size: 22px;
+        padding: 25px;
+        border-radius: 50%;
+      }
+
+      .addResumeText {
+        margin-top: 30px;
+        font-weight: 600;
+      }
+    }
+  }
+}
