@@ -1,0 +1,132 @@
+{
+  "COMPANY_LIST": [
+    {
+      "id": 1,
+      "thumbnamil_img": "https://static.wanted.co.kr/images/company/1776/2to658vajbmlokhw__400_400.jpg",
+      "like_count": 22,
+      "text_name": "프론트엔드 개발자",
+      "company_name": "모두싸인",
+      "reword_count": "1,000,000"
+    },
+    {
+      "id": 2,
+      "thumbnamil_img": "https://static.wanted.co.kr/images/company/771/rue0p1qgjanpgthe__400_400.jpg",
+      "like_count": 7,
+      "text_name": "풀필먼트센터 HR Staff(운영지원)",
+      "company_name": "두손컴퍼니",
+      "reword_count": "500,000"
+    },
+    {
+      "id": 3,
+      "thumbnamil_img": "https://static.wanted.co.kr/images/company/1682/ofeuico8cqrdh8id__400_400.jpg",
+      "like_count": 93,
+      "text_name": "서버(백엔드) 개발자",
+      "company_name": "카카오 모빌리티",
+      "reword_count": "1,000,000"
+    },
+    {
+      "id": 4,
+      "thumbnamil_img": "https://static.wanted.co.kr/images/company/2826/j2zprcmrfmreef5c__400_400.jpg",
+      "like_count": 25,
+      "text_name": "커뮤니티 PM",
+      "company_name": "당근마켓",
+      "reword_count": "1,000,000"
+    },
+    {
+      "id": 5,
+      "thumbnamil_img": "https://static.wanted.co.kr/images/company/700/2kob2lr5kxduzqaa__400_400.jpg",
+      "like_count": 11,
+      "text_name": "백엔드 개발자",
+      "company_name": "워시스왓",
+      "reword_count": "1,000,000"
+    },
+    {
+      "id": 6,
+      "thumbnamil_img": "https://static.wanted.co.kr/images/company/2979/j9jx7pfcu7qzvc0r__400_400.jpg",
+      "like_count": 19,
+      "text_name": "프론트엔드 주니어 개발자 (1년 이상)",
+      "company_name": "콜론디",
+      "reword_count": "1,000,000"
+    },
+    {
+      "id": 7,
+      "thumbnamil_img": "https://static.wanted.co.kr/images/company/403/p7qv76cfigor74sq__400_400.jpg",
+      "like_count": 2,
+      "text_name": "백엔드 주니어 개발자",
+      "company_name": "삼쩜삼",
+      "reword_count": "1,000,000"
+    },
+    {
+      "id": 8,
+      "thumbnamil_img": "https://static.wanted.co.kr/images/company/3062/rmmrotcsgucnrgub__400_400.jpg",
+      "like_count": 10,
+      "text_name": "프론트엔드 시니어 개발자",
+      "company_name": "델레로",
+      "reword_count": "1,000,000"
+    },
+    {
+      "id": 9,
+      "thumbnamil_img": "https://static.wanted.co.kr/images/company/1776/2to658vajbmlokhw__400_400.jpg",
+      "like_count": 22,
+      "text_name": "프론트엔드 개발자",
+      "company_name": "모두싸인",
+      "reword_count": "1,000,000"
+    },
+    {
+      "id": 10,
+      "thumbnamil_img": "https://static.wanted.co.kr/images/company/771/rue0p1qgjanpgthe__400_400.jpg",
+      "like_count": 7,
+      "text_name": "풀필먼트센터 HR Staff(운영지원)",
+      "company_name": "두손컴퍼니",
+      "reword_count": "500,000"
+    },
+    {
+      "id": 11,
+      "thumbnamil_img": "https://static.wanted.co.kr/images/company/1682/ofeuico8cqrdh8id__400_400.jpg",
+      "like_count": 93,
+      "text_name": "서버(백엔드) 개발자",
+      "company_name": "카카오 모빌리티",
+      "reword_count": "1,000,000"
+    },
+    {
+      "id": 12,
+      "thumbnamil_img": "https://static.wanted.co.kr/images/company/2826/j2zprcmrfmreef5c__400_400.jpg",
+      "like_count": 25,
+      "text_name": "커뮤니티 PM",
+      "company_name": "당근마켓",
+      "reword_count": "1,000,000"
+    },
+    {
+      "id": 13,
+      "thumbnamil_img": "https://static.wanted.co.kr/images/company/700/2kob2lr5kxduzqaa__400_400.jpg",
+      "like_count": 11,
+      "text_name": "백엔드 개발자",
+      "company_name": "워시스왓",
+      "reword_count": "1,000,000"
+    },
+    {
+      "id": 14,
+      "thumbnamil_img": "https://static.wanted.co.kr/images/company/2979/j9jx7pfcu7qzvc0r__400_400.jpg",
+      "like_count": 19,
+      "text_name": "프론트엔드 주니어 개발자 (1년 이상)",
+      "company_name": "콜론디",
+      "reword_count": "1,000,000"
+    },
+    {
+      "id": 15,
+      "thumbnamil_img": "https://static.wanted.co.kr/images/company/403/p7qv76cfigor74sq__400_400.jpg",
+      "like_count": 2,
+      "text_name": "백엔드 주니어 개발자",
+      "company_name": "삼쩜삼",
+      "reword_count": "1,000,000"
+    },
+    {
+      "id": 16,
+      "thumbnamil_img": "https://static.wanted.co.kr/images/company/3062/rmmrotcsgucnrgub__400_400.jpg",
+      "like_count": 10,
+      "text_name": "프론트엔드 시니어 개발자",
+      "company_name": "델레로",
+      "reword_count": "1,000,000"
+    }
+  ]
+}

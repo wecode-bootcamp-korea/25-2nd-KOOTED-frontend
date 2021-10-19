@@ -1,0 +1,87 @@
+@import '../../../../styles/variables.scss';
+
+.BodyTags {
+  padding: 16px;
+
+  .TagText {
+    font-size: 15px;
+    font-weight: 700;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 20px;
+    letter-spacing: normal;
+    color: #333;
+    margin-bottom: 15px;
+  }
+
+  .TagPick {
+    .tagPickText {
+      font-size: 15px;
+      font-weight: 500;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 20px;
+      letter-spacing: normal;
+      color: #333;
+      margin: 15px 0;
+    }
+
+    .tagPickWrap {
+      margin: -3px -3.5px;
+      text-align: center;
+      list-style: none;
+
+      .tags {
+        margin: 3px;
+        display: inline-block;
+
+        .tagBtn {
+          border-radius: 17px;
+          border: 1px solid transparent;
+          height: 34px;
+          line-height: 34px;
+          padding: 0 15px;
+          font-size: 13px;
+          font-weight: 400;
+          font-stretch: normal;
+          font-style: normal;
+          letter-spacing: normal;
+          color: #333;
+        }
+      }
+    }
+
+    .choiceTagList {
+      padding: 30px 0;
+      text-align: center;
+      list-style: none;
+      border: 1px solid $theme-color-border;
+
+      .choiceTags {
+        margin: 3px;
+        display: inline-block;
+
+        .choiceTagBtn {
+          border-radius: 17px;
+          border: 1px solid transparent;
+          height: 34px;
+          line-height: 34px;
+          padding: 0 15px;
+          font-size: 13px;
+          font-weight: 400;
+          font-stretch: normal;
+          font-style: normal;
+          letter-spacing: normal;
+          color: #333;
+          background-color: rgb(240, 248, 248);
+        }
+      }
+    }
+
+    .guideText {
+      padding: 10px 0;
+      font-size: 9pt;
+      color: #999;
+    }
+  }
+}
