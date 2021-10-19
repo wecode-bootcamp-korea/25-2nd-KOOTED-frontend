@@ -1,0 +1,7 @@
+{
+  "CATEGORY_LIST": [
+    { "id": 1, "img_color": "#CC3D3D", "job_name": "웹 개발자" },
+    { "id": 2, "img_color": "#CC723D", "job_name": "서버 개발자" },
+    { "id": 3, "img_color": "#CCA63D", "job_name": "프론트엔드 개발자" }
+  ]
+}

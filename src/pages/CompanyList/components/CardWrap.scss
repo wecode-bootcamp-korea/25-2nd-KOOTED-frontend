@@ -1,0 +1,89 @@
+@import '../../../styles/variables.scss';
+
+.CardWrap {
+  @include flex-center();
+  flex-direction: column;
+  margin-bottom: 50px;
+
+  .imgWrap {
+    position: relative;
+    text-align: center;
+
+    .cardImg {
+      width: 245px;
+      border-radius: 5px;
+      border: 1px solid $theme-color-border;
+    }
+
+    .heartWrap {
+      @include flex-center();
+      position: absolute;
+      top: 10px;
+      right: 14px;
+      width: 55px;
+      height: 30px;
+      margin-left: 175px;
+      opacity: 0.5;
+      border-radius: 5px;
+      background-color: #4c4c4c;
+
+      .fas {
+        font-size: 9pt;
+        color: white;
+        z-index: 9;
+      }
+
+      .heartCount {
+        margin-left: 7px;
+        font-size: 10pt;
+        color: white;
+      }
+    }
+  }
+
+  .cardBody {
+    padding: 6px;
+
+    .postName {
+      color: #333;
+      font-size: 17px;
+      font-weight: 600;
+      line-height: 1.2;
+      max-height: 2.4em;
+      overflow: hidden;
+      text-align: left;
+      word-break: break-word;
+    }
+
+    .postCompany {
+      margin-top: 10px;
+      font-size: 15px;
+    }
+
+    .responseRate {
+      display: inline-block;
+      height: 19px;
+      margin-top: 10px;
+      padding: 0 5px;
+      border: 1px solid #00aead;
+      border-radius: 2px;
+      font-size: 10px;
+      font-weight: 600;
+      line-height: 19px;
+      color: #00aead;
+      background-color: #fff;
+    }
+
+    .postLocation {
+      margin-top: 10px;
+      font-size: 15px;
+      color: #999;
+    }
+
+    .postReward {
+      margin-top: 10px;
+      font-size: 13px;
+      color: #666;
+    }
+  }
+}

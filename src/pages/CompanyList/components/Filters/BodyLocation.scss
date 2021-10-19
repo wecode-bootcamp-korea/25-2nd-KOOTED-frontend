@@ -1,0 +1,105 @@
+@import '../../../../styles/variables.scss';
+
+.BodyLocation {
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+
+  .choiceLocationWrap {
+    display: flex;
+    .bigLocationLeft {
+      width: 50%;
+
+      .LocationText {
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 23px;
+        color: #767676;
+        margin-bottom: 8px;
+      }
+
+      .LocationWrap {
+        padding: 10px;
+        list-style: none;
+        border: 1px solid $theme-color-border;
+        border-right: 0;
+        font-size: 11pt;
+        font-weight: 600;
+        color: #36f;
+      }
+    }
+
+    .smallLocationRight {
+      width: 50%;
+
+      .LocationText {
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 23px;
+        color: #767676;
+        margin-bottom: 8px;
+      }
+
+      .LocationWrap {
+        height: 200px;
+        padding: 10px;
+        overflow: scroll;
+        font-size: 11pt;
+        list-style: none;
+        border: 1px solid $theme-color-border;
+
+        :hover {
+          background-color: #f6f8ff;
+        }
+
+        .LocationBtns {
+          padding: 7px;
+          list-style: none;
+          border-right: 0;
+          font-size: 11pt;
+          font-weight: 600;
+        }
+      }
+    }
+  }
+  .pickLocationWrap {
+    margin-top: 16px;
+    .LocationPickText {
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 23px;
+      color: #767676;
+      margin-bottom: 8px;
+    }
+
+    .choiceLocationList {
+      padding: 30px 5px;
+      text-align: center;
+      list-style: none;
+      border: 1px solid $theme-color-border;
+
+      .choiceLocations {
+        display: inline-block;
+        margin: 2px;
+        padding: 0 15px;
+        border-radius: 17px;
+        border: 1px solid transparent;
+        height: 34px;
+        line-height: 34px;
+        font-size: 13px;
+        font-weight: 400;
+        font-stretch: normal;
+        font-style: normal;
+        letter-spacing: normal;
+        color: #333;
+        background-color: rgb(240, 248, 248);
+      }
+    }
+
+    .guideText {
+      padding: 10px 0;
+      font-size: 9pt;
+      color: #999;
+    }
+  }
+}

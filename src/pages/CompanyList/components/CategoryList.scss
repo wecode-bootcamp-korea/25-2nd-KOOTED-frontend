@@ -1,0 +1,32 @@
+.CategoryList {
+  display: table-cell;
+  margin-right: 20px;
+
+  .imgCard {
+    position: relative;
+    width: 120px;
+    height: 60px;
+    border-radius: 5px;
+    background-color: #d1d1d1;
+    background-size: cover;
+    background-position: 50%;
+
+    .cardTag {
+      width: 120px;
+      height: 60px;
+      border-radius: 5px;
+    }
+
+    .cardText {
+      position: absolute;
+      top: 25px;
+      right: 0px;
+      width: 120px;
+      color: #fff;
+      text-align: center;
+      font-size: 14px;
+      font-weight: 400;
+      z-index: 1;
+    }
+  }
+}
