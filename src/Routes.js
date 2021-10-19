@@ -5,8 +5,8 @@ import Main from './pages/Main/Main';
 import CompanyList from './pages/CompanyList/CompanyList';
 import CompanyDetail from './pages/CompanyDetail/CompanyDetail';
 import Mypage from './pages/Mypage/Mypage';
-import Resume from './pages/Resume/Resume';
 import Footer from './components/Footer/Footer';
+import ResumeList from './pages/ResumeList/ResumeList';
 
 class Routes extends React.Component {
   render() {
@@ -18,7 +18,7 @@ class Routes extends React.Component {
           <Route exact path="/wd-list" component={CompanyList} />
           <Route exact path="/wd-detail" component={CompanyDetail} />
           <Route exact path="/wd-mypage" component={Mypage} />
-          <Route exact path="/wd-resume" component={Resume} />
+          <Route exact path="/wd-resume-list" component={ResumeList} />
         </Switch>
         <Footer />
       </Router>

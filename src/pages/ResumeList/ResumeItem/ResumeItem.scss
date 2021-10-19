@@ -1,0 +1,53 @@
+@import '../../../styles/variables.scss';
+
+.ResumeItem {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 260px;
+  height: 200px;
+  margin: 10px;
+  cursor: pointer;
+  border: 1px solid $theme-color-border;
+  background-color: #ffffff;
+
+  .itemTop {
+    padding: 20px;
+
+    .itemTitle {
+      font-size: 18px;
+      font-weight: 600;
+    }
+
+    .itemDate {
+      margin-top: 10px;
+      color: rgba(0, 0, 0, 0.4);
+    }
+  }
+
+  .itemBottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 20px;
+    border-top: 1px solid $theme-color-border;
+
+    .itemState {
+      display: flex;
+      align-items: center;
+      font-weight: 600;
+
+      .itemFile {
+        border: 1px solid black;
+        font-size: 12px;
+        padding: 3px;
+        margin-right: 10px;
+        border-radius: 3px;
+      }
+    }
+
+    i {
+      color: rgba(0, 0, 0, 0.5);
+    }
+  }
+}
