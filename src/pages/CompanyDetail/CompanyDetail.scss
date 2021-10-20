@@ -1,0 +1,147 @@
+@import '../../styles/variables.scss';
+
+.CompanyDetail {
+  @include flex-center();
+  margin-top: 70px;
+
+  .detailMain {
+    width: 700px;
+    margin-right: 20px;
+
+    .map {
+      width: 500px;
+      height: 450px;
+    }
+
+    .CompanyImage {
+      position: relative;
+      overflow: hidden;
+      width: 100%;
+
+      .imageSlider {
+        // position: absolute;
+        width: 100%;
+        // .companyImageItem {
+        // }
+      }
+    }
+
+    .detailTitle {
+      margin: 40px 0;
+
+      .companyTitle {
+        margin: 25px 0;
+
+        .employment {
+          margin-bottom: 9.5px;
+          font-size: 22px;
+          font-weight: 550;
+        }
+
+        .companyInfo {
+          display: flex;
+          font-size: 14px;
+
+          .companyName {
+            margin: 3px;
+            font-weight: 600;
+          }
+
+          .respon {
+            @include flex-center();
+            margin: 0 5px;
+            padding: 0 3px;
+            font-size: 10px;
+            color: #855af0;
+            border: 1px solid #855af0;
+          }
+
+          .location {
+            @include flex-center();
+            font-weight: 400;
+            color: #999;
+          }
+        }
+      }
+    }
+
+    .companyInt {
+      margin: 30px 0;
+    }
+
+    .conditionsTitle {
+      margin: 20px 0;
+
+      .companySubContent {
+        margin-bottom: 10px;
+        font-weight: 600;
+      }
+    }
+
+    .endLine {
+      background-color: $theme-color-border;
+      margin-top: 70px;
+    }
+
+    .companySite {
+      @include flex-space-between();
+      display: flex;
+      margin-top: 70px;
+      padding: 15px;
+      border: 1px solid $theme-color-border;
+
+      .companySiteLeft {
+        display: flex;
+
+        i {
+          font-size: 50px;
+        }
+
+        .companySubName {
+          display: flex;
+          justify-content: center;
+          flex-direction: column;
+          margin-left: 15px;
+          font-size: 15px;
+
+          .followCompany {
+            margin-bottom: 8px;
+            font-weight: 600;
+          }
+
+          .companyLine {
+            color: #999;
+            font-weight: 600;
+          }
+        }
+      }
+
+      .followButton {
+        padding: 10px 25px;
+        color: #fff;
+        border-radius: 5px;
+        font-size: 14px;
+        font-weight: 600;
+        background-color: $theme-color;
+      }
+    }
+
+    .warning {
+      display: flex;
+      align-content: center;
+      margin: 10px 0;
+      padding: 25px 30px;
+      background-color: $theme-background-color;
+
+      .warningIcon {
+        font-size: 20px;
+      }
+
+      .warningContents {
+        width: 450px;
+        margin: 0 20px;
+        font-size: 12px;
+      }
+    }
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "result": [
+    {
+      "id": 1,
+      "title": "데이터 엔지니어",
+      "recommender_reward": "400,000",
+      "applicant_reward": "300,000",
+      "company_names": "라이픽",
+      "tag": { "name": "응답률 매우 낮음", "color": "red" },
+      "count": 302,
+      "location": "# 지도",
+      "deadline": ""
+    }
+  ]
+}

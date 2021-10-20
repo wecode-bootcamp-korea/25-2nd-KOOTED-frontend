@@ -1,0 +1,283 @@
+@import '../../../styles/variables.scss';
+
+.DetailSide {
+  width: 340px;
+  z-index: 1;
+
+  .detailAside {
+    position: fixed;
+    top: 70px;
+
+    .sideTop {
+      position: relative;
+      padding: 24px 20px;
+      margin-bottom: 10px;
+      width: 340px;
+      height: 323px;
+      border: 1px solid $theme-color-border;
+
+      .compensation {
+        position: relative;
+        font-weight: 600;
+
+        .sideTitle {
+          font-weight: 600;
+        }
+
+        i {
+          @include flex-center;
+          position: absolute;
+          top: 0;
+          right: 0;
+          width: 40px;
+          height: 40px;
+          font-size: 20px;
+          color: $theme-color;
+          border-radius: 50%;
+          border: 1px solid $theme-color-border;
+        }
+
+        ul {
+          display: flex;
+          margin: 20px 0;
+
+          li {
+            margin-right: 80px;
+
+            h4 {
+              margin-bottom: 10px;
+              font-size: 14px;
+              color: #999;
+            }
+          }
+        }
+      }
+
+      .noneBookMark {
+        @include flex-center;
+        width: 100%;
+        padding: 15px 0;
+        border: 1px solid $theme-color;
+        border-radius: 30px;
+
+        i {
+          font-size: 20px;
+          color: $theme-color;
+        }
+
+        .bookMarkName {
+          margin-left: 10px;
+          font-weight: 600;
+          font-size: 16px;
+          color: $theme-color;
+        }
+      }
+
+      .bookMark {
+        @include flex-center;
+        width: 100%;
+        padding: 15px 0;
+        border: 1px solid $theme-color;
+        border-radius: 30px;
+
+        i {
+          font-size: 20px;
+          color: $theme-color;
+        }
+
+        .bookMarkName {
+          margin-left: 10px;
+          font-size: 16px;
+          font-weight: 600;
+          color: $theme-color;
+        }
+      }
+
+      .support {
+        margin-top: 10px;
+        width: 100%;
+        padding: 15px 0;
+        border: 1px solid $theme-color;
+        background-color: $theme-color;
+        border-radius: 30px;
+
+        .supportName {
+          color: #fff;
+          font-size: 16px;
+          font-weight: 600;
+        }
+      }
+
+      .bookMarkLike {
+        position: absolute;
+        margin: 0 20px 20px 0;
+        right: 0;
+        bottom: 0;
+        width: 65px;
+        height: 30px;
+        border-radius: 25px;
+        border: 1px solid #999;
+
+        i {
+          margin-right: 5px;
+          color: $theme-color;
+        }
+
+        .inactive {
+          color: $theme-color;
+        }
+      }
+    }
+
+    .pass {
+      @include flex-space-between();
+      font-size: 12px;
+      padding: 15px;
+      background-color: $theme-background-color;
+
+      .aiPass {
+        font-weight: 800;
+      }
+
+      .curious {
+        color: #999;
+
+        .documentPass {
+          margin-right: 5px;
+        }
+      }
+    }
+  }
+
+  .noSupportSide {
+    display: none;
+  }
+
+  .supportSide {
+    position: fixed;
+    margin-top: 70px;
+    width: 340px;
+    height: 700px;
+    top: 0;
+    border: 1px solid $theme-color-border;
+    border-collapse: separate;
+    background-color: #ffffff;
+
+    .supportHeader {
+      display: flex;
+      justify-content: center;
+      position: relative;
+      padding: 20px;
+      border-bottom: 1px solid $theme-color-border;
+
+      .supportTitle {
+        @include flex-center();
+        font-weight: 600;
+      }
+
+      .back {
+        position: absolute;
+        right: 20px;
+        color: #999;
+        font-size: 16px;
+        font-weight: 600;
+      }
+    }
+
+    .contentsConfirm {
+      @include flex-center();
+      flex-direction: column;
+      padding: 20px;
+      font-size: 13px;
+      background-color: $theme-background-color;
+
+      .oneMore {
+        margin-bottom: 5px;
+        font-weight: 600;
+      }
+
+      .tip {
+        font-size: 600;
+      }
+    }
+
+    .inputContents {
+      padding: 0 20px;
+
+      .supsubTitle {
+        margin: 20px -20px;
+        margin-bottom: 10px;
+        padding-left: 20px;
+        font-weight: 600;
+        border-left: 2px solid $theme-color;
+      }
+
+      .subInput {
+        display: flex;
+        align-items: center;
+        padding: 15px 0;
+        font-weight: 500;
+        border-bottom: 1px solid $theme-color-border;
+
+        .inputTitle {
+          width: 80px;
+        }
+
+        .inputBox {
+          font-size: 16px;
+          font-weight: 600;
+          border: 0;
+          outline: none;
+        }
+
+        .inputText {
+          font-size: 14px;
+        }
+
+        .inputButton {
+          @include flex-space-between();
+          width: 70%;
+          font-weight: 600;
+          font-size: 16px;
+        }
+      }
+
+      .passRate {
+        margin: 30px 0;
+        color: #666;
+        font-size: 13px;
+        font-weight: 400;
+        line-height: 1.6;
+      }
+    }
+
+    .submit {
+      @include flex-center();
+      position: absolute;
+      width: 100%;
+      bottom: 0;
+      padding: 24px 20px;
+      background-color: #fff;
+      border-top: 1px solid $theme-color-border;
+
+      .submitButton {
+        width: 100%;
+        height: 50px;
+        font-size: 16px;
+        color: #ffff;
+        background-color: $theme-color;
+        border-radius: 25px;
+        border: 1px solid none;
+      }
+
+      .failSubmit {
+        width: 100%;
+        height: 50px;
+        font-size: 16px;
+        color: #ccc;
+        background-color: #f4f5f7;
+        border-radius: 25px;
+      }
+    }
+  }
+}

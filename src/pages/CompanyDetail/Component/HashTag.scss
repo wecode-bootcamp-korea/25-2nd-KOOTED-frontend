@@ -1,0 +1,17 @@
+@import '../../../styles/variables.scss';
+
+.hashTagList {
+  display: flex;
+
+  .hashTagContents {
+    margin-right: 16px;
+
+    .hashTagName {
+      display: inline-block;
+      padding: 9px 14px;
+      border-radius: 25px;
+      background-color: $theme-background-color;
+      font-size: 12px;
+    }
+  }
+}
