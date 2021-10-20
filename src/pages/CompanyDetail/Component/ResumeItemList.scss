@@ -1,0 +1,92 @@
+@import '../../../styles/variables.scss';
+
+.ResumeItemList {
+  flex-direction: column;
+  height: 120px;
+  width: 100%;
+  overflow: auto;
+  align-items: center;
+  margin-bottom: 20px;
+
+  .resumeItem {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 4px 0;
+    margin-bottom: 10px;
+    border: 2px solid $theme-color;
+    border-radius: 5px;
+
+    .selectResume {
+      margin: 20px 18px;
+    }
+
+    .resumeContent {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      .userName {
+        font-size: 15px;
+        font-weight: 600;
+        margin-bottom: 5px;
+      }
+
+      .resumeSubContent {
+        font-size: 11px;
+
+        .resumeState {
+          margin-right: 6px;
+          font-size: 11px;
+        }
+      }
+    }
+
+    i {
+      position: absolute;
+      right: 18px;
+    }
+  }
+
+  .failresumeItem {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 4px 0;
+    margin-bottom: 10px;
+    border: 2px solid $theme-background-color;
+    border-radius: 5px;
+
+    .selectResume {
+      margin: 20px 18px;
+    }
+
+    .resumeContent {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      .userName {
+        font-size: 15px;
+        font-weight: 600;
+        margin-bottom: 5px;
+      }
+
+      .resumeSubContent {
+        font-size: 11px;
+
+        .resumeState {
+          margin-right: 6px;
+          font-size: 11px;
+        }
+      }
+    }
+
+    i {
+      position: absolute;
+      right: 18px;
+    }
+  }
+}
