@@ -1,0 +1,37 @@
+[
+  {
+    "id": 1,
+    "image": "/images/MyPage/companyLogo.png",
+    "title": "프론트엔드 개발자",
+    "company": "알리콘",
+    "location": "서울·한국"
+  },
+  {
+    "id": 2,
+    "image": "/images/MyPage/companyLogo.png",
+    "title": "백엔드 개발자",
+    "company": "당근 M",
+    "location": "강남·한국"
+  },
+  {
+    "id": 3,
+    "image": "/images/MyPage/companyLogo.png",
+    "title": "iOS 개발자",
+    "company": "BankSal",
+    "location": "서울·한국"
+  },
+  {
+    "id": 4,
+    "image": "/images/MyPage/companyLogo.png",
+    "title": "프론트엔드 개발자",
+    "company": "Kooted",
+    "location": "부산·한국"
+  },
+  {
+    "id": 5,
+    "image": "/images/MyPage/companyLogo.png",
+    "title": "안드로이드 개발자",
+    "company": "알리 K",
+    "location": "서울·한국"
+  }
+]

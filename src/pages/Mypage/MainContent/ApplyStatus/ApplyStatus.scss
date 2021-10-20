@@ -1,0 +1,38 @@
+@import '../../../../styles/variables.scss';
+
+.ApplyStatus {
+  max-width: 800px;
+  height: fit-content;
+  padding: 30px;
+  border: 1px solid $theme-color-border;
+  border-radius: 6px;
+  background-color: #ffffff;
+
+  .title {
+    margin-bottom: 10px;
+    font-size: 18px;
+    font-weight: 600;
+  }
+
+  .applyList {
+    display: flex;
+    justify-content: center;
+
+    .item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-width: 200px;
+      padding: 30px 0;
+
+      &:not(:last-child) {
+        border-right: 1px solid $theme-color-border;
+      }
+
+      .count {
+        margin-bottom: 20px;
+        font-size: 35px;
+      }
+    }
+  }
+}

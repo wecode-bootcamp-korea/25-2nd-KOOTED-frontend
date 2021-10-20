@@ -1,0 +1,38 @@
+@import '../../../../../styles/variables.scss';
+
+.BookMarkItem {
+  display: flex;
+  width: 330px;
+  margin: 10px 20px;
+  padding: 10px;
+
+  .thumbnail {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border: 1px solid $theme-color-border;
+  }
+
+  .info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-left: 20px;
+    padding: 10px;
+    max-width: 200px;
+
+    .title {
+      font-size: 20px;
+      font-weight: 600;
+    }
+
+    .company {
+      font-weight: 600;
+    }
+
+    .location {
+      font-size: 13px;
+      color: rgba(0, 0, 0, 0.5);
+    }
+  }
+}

@@ -1,0 +1,30 @@
+@import '../../../../styles/variables.scss';
+
+.BookMark {
+  max-width: 800px;
+  margin-top: 20px;
+  border: 1px solid $theme-color-border;
+  background-color: #ffffff;
+
+  .bookMarkTitle {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 30px 10px 30px;
+    font-size: 18px;
+    font-weight: 600;
+
+    .btnShowAll {
+      font-size: 13px;
+      font-weight: lighter;
+      color: $theme-color;
+      cursor: pointer;
+    }
+  }
+
+  .bookMarkList {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 10px 20px;
+  }
+}
