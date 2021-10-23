@@ -14,6 +14,7 @@ class Routes extends React.Component {
   render() {
     return (
       <Router>
+        <Nav />
         <Switch>
           <Route exact path="/" component={Main} />
           <Route exact path="/wd-list" component={CompanyList} />
@@ -23,6 +24,7 @@ class Routes extends React.Component {
           <Route path="/oauth" component={OAuthKakao} />
           <Route exact path="/specialty" component={Specialty} />
         </Switch>
+        <Footer />
       </Router>
     );
   }

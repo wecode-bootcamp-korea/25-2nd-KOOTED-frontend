@@ -1,0 +1,8 @@
+.ValueLine {
+  height: 50px;
+  border-top: 1px solid rgba(73, 149, 103, 0.5);
+
+  &:last-child {
+    border-bottom: 1px solid rgb(73, 149, 103);
+  }
+}

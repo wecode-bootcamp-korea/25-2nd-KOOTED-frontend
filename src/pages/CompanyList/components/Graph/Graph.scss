@@ -1,0 +1,59 @@
+@import '../../../../styles/variables.scss';
+
+.Graph {
+  @include flex-center();
+  margin: -10px -300px 10px -300px;
+  padding: 50px 180px;
+  background-color: #22bd79;
+
+  .graphWrap {
+    display: flex;
+    position: relative;
+    height: 350px;
+    padding: 10px;
+
+    .valueLineWrap {
+      width: 770px;
+      height: 350px;
+      border-left: 1px solid rgb(73, 149, 103);
+    }
+
+    .valueGraphWrap {
+      position: absolute;
+      display: flex;
+      align-items: flex-end;
+      left: 60px;
+      bottom: -32px;
+    }
+  }
+
+  .textWrap {
+    width: 250px;
+    margin-left: 50px;
+    padding-bottom: 185px;
+
+    .job_group,
+    .job {
+      display: block;
+      padding: 8px 10px;
+      margin-bottom: 15px;
+      border-radius: 3px;
+      font-size: 13pt;
+      font-weight: bold;
+      color: #22bd79;
+      background-color: #fff;
+    }
+
+    .avgWrap {
+      color: white;
+
+      .avgValueWrap {
+        margin-top: 10px;
+        .avgValue {
+          font-size: 28pt;
+          font-weight: bold;
+        }
+      }
+    }
+  }
+}

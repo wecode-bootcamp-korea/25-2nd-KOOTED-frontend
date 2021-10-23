@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import CategoryList from './components/CategoryList';
+import Graph from './components/Graph/Graph';
 import FilterBtn from './components/FilterBtn';
 import CardWrap from './components/CardWrap';
 import './CompanyList.scss';
@@ -51,6 +52,7 @@ export default class CompanyList extends React.Component {
           </div>
         </header>
         <section className="categoryBody">
+          <Graph />
           <article className="filterWrap">
             <div className="btnList">
               <FilterBtn btnName="태그" btnTextFind="딱 맞는 기업 찾기" />

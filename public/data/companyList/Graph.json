@@ -1,0 +1,184 @@
+{
+  "category_list": [
+    {
+      "name": "개발",
+      "image_url": "#FF0000"
+    }
+  ],
+  "salary_list": [
+    {
+      "working_year": 0,
+      "total_salary": "30000000.0000000"
+    },
+    {
+      "working_year": 1,
+      "total_salary": "37500000.0000000"
+    },
+    {
+      "working_year": 2,
+      "total_salary": "37500000.0000000"
+    },
+    {
+      "working_year": 3,
+      "total_salary": "37500000.0000000"
+    },
+    {
+      "working_year": 4,
+      "total_salary": "37500000.0000000"
+    },
+    {
+      "working_year": 5,
+      "total_salary": "45000000.0000000"
+    },
+    {
+      "working_year": 6,
+      "total_salary": "50000000.0000000"
+    },
+    {
+      "working_year": 7,
+      "total_salary": "55000000.0000000"
+    },
+    {
+      "working_year": 8,
+      "total_salary": "79850000.0000000"
+    },
+    {
+      "working_year": 9,
+      "total_salary": "79850000.0000000"
+    },
+    {
+      "working_year": 10,
+      "total_salary": "79850000.0000000"
+    }
+  ],
+  "result": [
+    {
+      "id": 4,
+      "job_group": {
+        "id": 1,
+        "name": "개발",
+        "image_url": "#FF0000"
+      },
+      "job": {
+        "id": 2,
+        "name": "백 개발자",
+        "image_url": "#E4F7BA"
+      },
+      "title": "백엔드 개발자",
+      "reward": 10000.0,
+      "company_name": "커코2",
+      "created_at": "2021-10-22T09:48:59.828",
+      "tag": [
+        {
+          "id": 3,
+          "name": "인원성장률",
+          "color": "rgb(238, 237, 244)"
+        },
+        {
+          "id": 4,
+          "name": "퇴사율",
+          "color": "rgb(246, 246, 246)"
+        }
+      ],
+      "working_year": 0,
+      "count": 2,
+      "image_url": "https://image.vans.co.kr/cmsstatic/product/23723/VN0004KTEO11_1.jpg?gallery"
+    },
+    {
+      "id": 3,
+      "job_group": {
+        "id": 1,
+        "name": "개발",
+        "image_url": "#FF0000"
+      },
+      "job": {
+        "id": 1,
+        "name": "프론트 개발자",
+        "image_url": "#FAECC5"
+      },
+      "title": "프론트엔드 개발자2",
+      "reward": 30000.0,
+      "company_name": "커코2",
+      "created_at": "2021-10-22T09:48:59.820",
+      "tag": [
+        {
+          "id": 3,
+          "name": "인원성장률",
+          "color": "rgb(238, 237, 244)"
+        },
+        {
+          "id": 4,
+          "name": "퇴사율",
+          "color": "rgb(246, 246, 246)"
+        }
+      ],
+      "working_year": 0,
+      "count": 2,
+      "image_url": "https://image.vans.co.kr/cmsstatic/product/23723/VN0004KTEO11_1.jpg?gallery"
+    },
+    {
+      "id": 2,
+      "job_group": {
+        "id": 1,
+        "name": "개발",
+        "image_url": "#FF0000"
+      },
+      "job": {
+        "id": 1,
+        "name": "프론트 개발자",
+        "image_url": "#FAECC5"
+      },
+      "title": "프론트엔드 개발자1",
+      "reward": 20000.0,
+      "company_name": "커코1",
+      "created_at": "2021-10-22T09:48:59.813",
+      "tag": [
+        {
+          "id": 1,
+          "name": "업계연봉수준",
+          "color": "rgb(246, 246, 246)"
+        },
+        {
+          "id": 2,
+          "name": "투자",
+          "color": "rgb(240, 248, 248)"
+        }
+      ],
+      "working_year": 0,
+      "count": 3,
+      "image_url": "https://cdn.pixabay.com/photo/2016/05/05/02/37/sunset-1373171_960_720.jpg"
+    },
+    {
+      "id": 1,
+      "job_group": {
+        "id": 1,
+        "name": "개발",
+        "image_url": "#FF0000"
+      },
+      "job": {
+        "id": 2,
+        "name": "백 개발자",
+        "image_url": "#E4F7BA"
+      },
+      "title": "PHP 백엔드 개발자",
+      "reward": 10000.0,
+      "company_name": "커코1",
+      "created_at": "2021-10-22T09:48:59.807",
+      "tag": [
+        {
+          "id": 1,
+          "name": "업계연봉수준",
+          "color": "rgb(246, 246, 246)"
+        },
+        {
+          "id": 2,
+          "name": "투자",
+          "color": "rgb(240, 248, 248)"
+        }
+      ],
+      "working_year": 3,
+      "count": 1,
+      "image_url": "https://cdn.pixabay.com/photo/2016/05/05/02/37/sunset-1373171_960_720.jpg"
+    }
+  ]
+}

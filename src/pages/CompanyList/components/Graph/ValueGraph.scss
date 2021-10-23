@@ -1,0 +1,58 @@
+.ValueGraph {
+  display: flex;
+  flex-direction: column;
+  padding: 0 20px;
+
+  .graph {
+    position: relative;
+    width: 28px;
+    height: 190px;
+    background-color: rgba(73, 149, 103, 0.9);
+    animation: stack 2s 1;
+
+    @keyframes stack {
+      0% {
+        height: 0;
+      }
+      100% {
+        width: 28px;
+      }
+    }
+
+    .GraphGuide {
+      position: absolute;
+      top: -40px;
+      width: 65px;
+      padding: 5px;
+      border-radius: 7px;
+      font-size: 8.5pt;
+      color: #fff;
+      background-color: rgba(0, 0, 0, 0.5);
+
+      ::after {
+        border-top: 6px solid rgba(0, 0, 0, 0.2);
+        border-left: 6px solid transparent;
+        border-right: 6px solid transparent;
+        border-bottom: 0px solid transparent;
+        content: '';
+        position: absolute;
+        top: 34px;
+        left: 5px;
+      }
+      .GuideText {
+        font-size: 10pt;
+      }
+
+      &.deactive {
+        display: none;
+      }
+    }
+  }
+
+  .value {
+    margin-top: 10px;
+    text-align: center;
+    font-size: 9.5pt;
+    color: rgb(39, 47, 42);
+  }
+}
