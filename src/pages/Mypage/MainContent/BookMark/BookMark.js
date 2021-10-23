@@ -6,9 +6,9 @@ const BookMark = () => {
   const [bookMarkList, setBookMarkList] = useState([]);
 
   useEffect(() => {
-    fetch('/data/BookMark/bookmarkData.json')
+    fetch('http://10.58.0.118:8000/posts/bookmark')
       .then(res => res.json())
-      .then(data => setBookMarkList(data));
+      .then(data => setBookMarkList(data.bookmark_list));
   }, []);
 
   return (
@@ -20,17 +20,19 @@ const BookMark = () => {
         </span>
       </h1>
       <ul className="bookMarkList">
-        {bookMarkList.map(({ id, image, title, company, location }) => {
-          return (
-            <BookMarkItem
-              key={id}
-              image={image}
-              title={title}
-              company={company}
-              location={location}
-            />
-          );
-        })}
+        {bookMarkList?.map(
+          ({ id, image_url, title, company_name, location }) => {
+            return (
+              <BookMarkItem
+                key={id}
+                image={image_url}
+                title={title}
+                company={company_name}
+                location={location}
+              />
+            );
+          }
+        )}
       </ul>
     </section>
   );

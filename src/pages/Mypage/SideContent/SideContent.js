@@ -4,17 +4,17 @@ import './SideContent.scss';
 
 const SideContent = () => {
   const [userInfo, setUserInfo] = useState([]);
-  const { image, name, email, phone } = userInfo;
+  const { name, email, mobile_number } = userInfo;
 
   useEffect(() => {
-    fetch('/data/MyPage/userData.json')
+    fetch('http://10.58.0.118:8000/posts/bookmark')
       .then(res => res.json())
-      .then(info => setUserInfo(info[0]));
+      .then(data => setUserInfo(data.user_info));
   }, []);
 
   return (
     <section className="SideContent">
-      <UserInfo image={image} name={name} email={email} phone={phone} />
+      <UserInfo name={name} email={email} mobile_number={mobile_number} />
       <ul className="resumeStatusList">
         <li className="status want">
           원해요<span className="count">0</span>
