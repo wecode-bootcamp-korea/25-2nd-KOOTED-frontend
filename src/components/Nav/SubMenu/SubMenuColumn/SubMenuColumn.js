@@ -5,7 +5,7 @@ class SubMenuColumn extends React.Component {
   render() {
     const { mainCategory, subCategory } = this.props;
     return (
-      <div className="columnContainer">
+      <div className="SubMenuColumn">
         <h3 className="columnHeader">
           {mainCategory}
           <i className="fas fa-chevron-right" />

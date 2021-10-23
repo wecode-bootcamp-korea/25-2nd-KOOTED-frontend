@@ -21,18 +21,21 @@ class Nav extends React.Component {
   };
 
   render() {
+    const TOKEN = localStorage.getItem('token');
     const { isMenuVisible } = this.state;
 
     return (
-      <div className="navContainer">
-        <h3 className="navLogo">KOOTED</h3>
+      <div className="Nav">
+        <Link className="goMain" to="/">
+          <h3 className="navLogo">KOOTED</h3>
+        </Link>
         <ul className="navMenuBar">
           <li
             className="menuItem explore"
             onMouseOver={this.handleMouseOver}
             onMouseOut={this.handleMouseOut}
           >
-            <Link to="/">탐색</Link>
+            <Link to="/wd-list">탐색</Link>
           </li>
           <li className="menuItem explore">
             <Link to="/">커리어 성장</Link>
@@ -41,7 +44,7 @@ class Nav extends React.Component {
             <Link to="/">직군별 연봉</Link>
           </li>
           <li className="menuItem explore">
-            <Link to="/">이력서</Link>
+            <Link to="/wd-resume-list">이력서</Link>
           </li>
           <li className="menuItem explore">
             <Link to="/">매치업</Link>
@@ -54,7 +57,18 @@ class Nav extends React.Component {
           </li>
         </ul>
         <i className="fas fa-search btnSearch" />
-        <button className="btnSignUp">회원가입/로그인</button>
+        {TOKEN ? (
+          <Link to="/wd-mypage">
+            <img
+              className="profileImage"
+              src="/images/MyPage/profile.png"
+              alt="userImage"
+            />
+          </Link>
+        ) : (
+          <button className="btnSignUp">회원가입/로그인</button>
+        )}
+
         <SubMenu isMenuVisible={isMenuVisible} />
       </div>
     );
