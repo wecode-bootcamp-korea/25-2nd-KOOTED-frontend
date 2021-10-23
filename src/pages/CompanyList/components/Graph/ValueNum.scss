@@ -1,0 +1,11 @@
+.ValueNum {
+  height: 50px;
+  padding-right: 5px;
+  font-size: 9pt;
+  color: rgb(39, 47, 42);
+
+  &:last-child {
+    text-align: right;
+    height: 10px;
+  }
+}
