@@ -8,7 +8,7 @@ class SubMenu extends React.Component {
 
     return (
       <div
-        className={`subMenu ${isMenuVisible ? 'showSubMenu' : 'hideSubMenu'}`}
+        className={`SubMenu ${isMenuVisible ? 'showSubMenu' : 'hideSubMenu'}`}
       >
         <SubMenuColumn
           mainCategory="개발"
