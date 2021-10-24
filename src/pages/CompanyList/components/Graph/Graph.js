@@ -13,7 +13,7 @@ export default function Graph() {
       .then(data => setSalaryData(data.salary_list));
 
     valueToAVG(salaryData);
-  }, [salaryData]);
+  }, []);
 
   const valueToAVG = salaryData => {
     let floatToIntArr = salaryData.map(data =>
