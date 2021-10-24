@@ -15,6 +15,17 @@ export default class CompanyList extends React.Component {
     };
   }
 
+  handleChange = e => {
+    const { value } = e.target;
+    fetch(`/data/companyList/Company.json?sort=${value}`)
+      .then(res => res.json())
+      .then(company =>
+        this.setState({
+          companyList: company.COMPANY_LIST,
+        })
+      );
+  };
+
   componentDidMount() {
     fetch('/data/companyList/ListNav.json')
       .then(res => res.json())
@@ -60,14 +71,11 @@ export default class CompanyList extends React.Component {
               <FilterBtn btnName="경력" btnText="전체" />
             </div>
             <div className="orderList">
-              <button className="filterBtn">
-                <span className="btnName">인기순</span>
-                <img
-                  className="drop"
-                  alt="drop"
-                  src="/images/companyList/hwasal.png"
-                />
-              </button>
+              <select className="orderBtn" onChange={this.handleChange}>
+                <option value="-created_at">최신순</option>
+                <option value="-count">인기순</option>
+                <option value="-reward">보상금순</option>
+              </select>
             </div>
           </article>
           <div className="AllBookmarks">
