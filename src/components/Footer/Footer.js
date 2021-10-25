@@ -7,7 +7,7 @@ class Footer extends React.Component {
       <footer className="Footer">
         <div className="footerMenu">
           <img src="images/favicon.ico" alt="logo" />
-          <span className="logo">wanted</span>
+          <span className="logo">kooted</span>
           <div className="footerMenuBar">
             <a className="footerMenuItem" href="/">
               기업소개
@@ -36,18 +36,20 @@ class Footer extends React.Component {
         <div className="footerBorder" />
         <div className="footerInfo">
           <p className="footerInfoContent">
-            (주)원티드랩 (대표이사:이복기) | 서울특별시 송파구 올림픽로 300
-            롯데월드타워 35층 | 통신판매번호 : 2020-서울송파-3147
+            (주)쿠티드랩 (대표이사:쿠본욱) | 서울특별시 강남구 테헤란로 427
+            위워크타워 10층 | 통신판매번호 : 2021-서울강남-7580
             <br />
-            유료직업소개사업등록번호 : (국내) 제2020-3230259-14-5-00018호 |
-            (국외) 서울동부-유-2020-2 | 사업자등록번호 : 299-86-00021 |
-            02-539-7118
-            <br />© Wantedlab, Inc.
+            유료직업소개사업등록번호 : (국내) 제2021-3232209-11-6-00036호 |
+            (국외) 서울동부-유-2021-9 | 사업자등록번호 : 300-82-00832 |
+            02-589-0689
+            <br />© Kootedlab, Inc.
           </p>
-          <select className="transferLanguage" name="language">
-            <option value="korean" selected>
-              한국 (한국어)
-            </option>
+          <select
+            className="transferLanguage"
+            name="language"
+            defaultValue="default"
+          >
+            <option value="korean">한국 (한국어)</option>
             <option value="japanese">日本 (日本語)</option>
             <option value="chinese">臺灣 (中文)</option>
           </select>
