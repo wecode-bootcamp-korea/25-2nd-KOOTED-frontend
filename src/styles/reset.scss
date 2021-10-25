@@ -126,3 +126,12 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
 }
+textarea {
+  border-style: none;
+  outline: none;
+}
+input[type='number']::-webkit-outer-spin-button,
+input[type='number']::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}

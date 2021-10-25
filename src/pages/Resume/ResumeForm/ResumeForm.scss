@@ -1,0 +1,20 @@
+@import '../../../styles/variables.scss';
+
+.ResumeForm {
+  .formTitle {
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+  }
+
+  .explainList {
+    margin: 15px 0 30px 0;
+    padding: 10px;
+    background-color: #f3f9fe;
+
+    .explain {
+      line-height: 20px;
+      font-size: 12px;
+      color: rgba(0, 0, 0, 0.7);
+    }
+  }
+}

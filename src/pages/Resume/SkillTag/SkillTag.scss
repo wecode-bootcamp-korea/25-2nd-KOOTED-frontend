@@ -1,0 +1,25 @@
+.SkillTag {
+  display: flex;
+  margin: 0 4px;
+  padding: 10px 15px;
+  font-weight: lighter;
+  cursor: pointer;
+  border-radius: 20px;
+
+  &.add {
+    background-color: #e4f4ec;
+  }
+
+  &.remove {
+    background-color: rgba(0, 0, 0, 0.1);
+  }
+
+  .skill {
+    margin-right: 15px;
+  }
+
+  .fa-plus,
+  .fa-minus {
+    color: rgba(0, 0, 0, 0.3);
+  }
+}
