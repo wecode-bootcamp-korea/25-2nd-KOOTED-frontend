@@ -14,13 +14,14 @@ class Routes extends React.Component {
   render() {
     return (
       <Router>
+        <Nav />
         <Switch>
           <Route exact path="/" component={Main} />
           <Route exact path="/wd-list" component={CompanyList} />
           <Route exact path="/wd-detail" component={CompanyDetail} />
           <Route exact path="/wd-mypage" component={Mypage} />
           <Route exact path="/wd-resume-list" component={ResumeList} />
-          <Route path="/oauth" component={OAuthKakao} />
+          <Route exact path="/oauth" component={OAuthKakao} />
           <Route exact path="/specialty" component={Specialty} />
         </Switch>
       </Router>

@@ -1,11 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import SubMenu from './SubMenu/SubMenu';
+import Login from '../Login/Login';
 import './Nav.scss';
 
 class Nav extends React.Component {
   state = {
     isMenuVisible: false,
+    isLoginClick: false,
   };
 
   handleMouseOver = () => {
@@ -20,9 +22,15 @@ class Nav extends React.Component {
     });
   };
 
+  clickLoginBtn = () => {
+    this.setState(({ isLoginClick }) => ({
+      isLoginClick: !isLoginClick,
+    }));
+  };
+
   render() {
-    const TOKEN = localStorage.getItem('token');
-    const { isMenuVisible } = this.state;
+    const TOKEN = localStorage.getItem('accessToken');
+    const { isMenuVisible, isLoginClick } = this.state;
 
     return (
       <div className="Nav">
@@ -66,10 +74,13 @@ class Nav extends React.Component {
             />
           </Link>
         ) : (
-          <button className="btnSignUp">회원가입/로그인</button>
+          <button className="btnSignUp" onClick={this.clickLoginBtn}>
+            회원가입/로그인
+          </button>
         )}
 
         <SubMenu isMenuVisible={isMenuVisible} />
+        {isLoginClick && <Login clickLoginBtn={this.clickLoginBtn} />}
       </div>
     );
   }
