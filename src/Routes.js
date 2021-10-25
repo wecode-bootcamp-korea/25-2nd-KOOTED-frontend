@@ -21,7 +21,7 @@ class Routes extends React.Component {
           <Route exact path="/wd-detail" component={CompanyDetail} />
           <Route exact path="/wd-mypage" component={Mypage} />
           <Route exact path="/wd-resume-list" component={ResumeList} />
-          <Route path="/oauth" component={OAuthKakao} />
+          <Route exact path="/oauth" component={OAuthKakao} />
           <Route exact path="/specialty" component={Specialty} />
         </Switch>
         <Footer />

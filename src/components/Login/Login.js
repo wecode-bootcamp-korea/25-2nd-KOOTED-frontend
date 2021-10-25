@@ -1,21 +1,31 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
+import { useEffect } from 'react/cjs/react.development';
 import './Login.scss';
 
-function Login() {
+function Login({ clickLoginBtn }) {
   const KAKAO_CODE_URL = `https://kauth.kakao.com/oauth/authorize?response_type=code&client_id=${process.env.REACT_APP_CLIENT_ID}&redirect_uri=${process.env.REACT_APP_REDIRECT_URL}`;
 
   const loginKakao = () => {
     let kakaoLogin = window.open(KAKAO_CODE_URL);
   };
 
+  useEffect(() => {
+    document.body.style.cssText = `position: fixed; top: -${window.scrollY}px; overflow-y: scroll; width: 100%;`;
+    return () => {
+      const scrollY = document.body.style.top;
+      document.body.style.cssText = '';
+      window.scrollTo(0, parseInt(scrollY || '0', 10) * -1);
+    };
+  }, []);
+
   return (
     <div className="LoginModalWrap">
-      <div className="background" />
+      <div className="background" onClick={clickLoginBtn} />
       <div className="modalItems">
         <div className="modalHeader">
           <h1 className="kootedLogo">kooted</h1>
-          <button o>
+          <button onClick={clickLoginBtn}>
             <i className="fas fa-times" />
           </button>
         </div>
