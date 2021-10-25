@@ -1,0 +1,28 @@
+{
+  "resume_info": {
+    "careers": [
+      {
+        "id": 11,
+        "company_name": "회사회사",
+        "duty": "부서부서",
+        "date_of_joining": "2021-08-01",
+        "date_of_resigning": "2021-09-01",
+        "in_office": 1
+      }
+    ],
+    "title": "이력서 1",
+    "college": "RbRb",
+    "id": 14,
+    "introduction": "I'm kkyu",
+    "skills": [
+      { "name": "HTML" },
+      { "name": "Javascript" },
+      { "name": "React.js" }
+    ]
+  },
+  "user_info": {
+    "email": "alswl4152@naver.com",
+    "mobile_number": "010-9945-7580",
+    "name": "승균"
+  }
+}

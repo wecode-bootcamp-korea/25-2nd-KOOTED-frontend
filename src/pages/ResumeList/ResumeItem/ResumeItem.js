@@ -3,17 +3,24 @@ import './ResumeItem.scss';
 
 class ResumeItem extends React.Component {
   render() {
+    const { id, name, update, status, goToResumeUpdate, deleteResumeList } =
+      this.props;
+
     return (
       <div className="ResumeItem">
-        <div className="itemTop">
-          <h3 className="itemTitle">정민지</h3>
-          <h5 className="itemDate">2021. 10. 19</h5>
+        <div className="itemTop" onClick={() => goToResumeUpdate(id)}>
+          <h3 className="itemTitle">{name}</h3>
+          <h5 className="itemDate">{update.split('T')[0]}</h5>
         </div>
         <div className="itemBottom">
           <h5 className="itemState">
-            <span className="itemFile">한</span>작성 완료
+            <span className="itemFile">한</span>
+            {status}
           </h5>
-          <i className="fas fa-ellipsis-v" />
+          <i
+            className="far fa-trash-alt"
+            onClick={() => deleteResumeList(id)}
+          />
         </div>
       </div>
     );
