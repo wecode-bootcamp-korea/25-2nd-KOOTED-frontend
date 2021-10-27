@@ -11,7 +11,7 @@ function OAuthKakao() {
     fetch(KAKAO_TOKEN_URL)
       .then(result => result.json())
       .then(data => {
-        fetch('http://10.58.5.200:8000/users/kakao', {
+        fetch('http://10.58.0.243:8000/users/kakao', {
           headers: {
             Authorization: data.access_token,
           },
@@ -19,10 +19,16 @@ function OAuthKakao() {
           .then(result => result.json())
           .then(data => {
             window.localStorage.setItem('accessToken', data.access_token);
-            window.close();
+            if (data.message === 'SUCCESS') {
+              window.opener.location.href = '/';
+              window.self.close();
+            } else if (data.message === 'NOT_ENOUGH_INFORMATION') {
+              window.opener.location.href = '/specialty';
+              window.self.close();
+            }
           });
       });
-  });
+  }, [KAKAO_TOKEN_URL]);
 
   return <div />;
 }
