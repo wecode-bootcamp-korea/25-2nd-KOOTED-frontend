@@ -2,13 +2,19 @@ import React, { useState, useEffect } from 'react';
 import BookMarkItem from './BookMarkItem/BookMarkItem';
 import './BookMark.scss';
 
+const API = localStorage.getItem('token');
+
 const BookMark = () => {
   const [bookMarkList, setBookMarkList] = useState([]);
 
   useEffect(() => {
-    fetch('http://10.58.0.118:8000/posts/bookmark')
+    fetch('http://10.58.0.243:8000/users', {
+      headers: {
+        Authorization: API,
+      },
+    })
       .then(res => res.json())
-      .then(data => setBookMarkList(data.bookmark_list));
+      .then(data => setBookMarkList(data.user_info.bookmarks));
   }, []);
 
   return (
@@ -25,6 +31,7 @@ const BookMark = () => {
             return (
               <BookMarkItem
                 key={id}
+                id={id}
                 image={image_url}
                 title={title}
                 company={company_name}

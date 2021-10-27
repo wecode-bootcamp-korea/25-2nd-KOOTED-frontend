@@ -1,7 +1,7 @@
 import React from 'react';
 import './UserInfo.scss';
 
-const UserInfo = ({ name, email, mobile_number }) => {
+const UserInfo = ({ name, email }) => {
   return (
     <div className="UserInfo">
       <img
@@ -11,7 +11,7 @@ const UserInfo = ({ name, email, mobile_number }) => {
       />
       <h3 className="name">{name}</h3>
       <h5 className="email">{email}</h5>
-      <h5 className="contact">{mobile_number}</h5>
+      <h5 className="contact">010-9945-7580</h5>
       <button className="btnAddInterest">
         <i className="fas fa-plus-square" />
         관심사 선택하기
