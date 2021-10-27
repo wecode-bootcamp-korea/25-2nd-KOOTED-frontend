@@ -6,6 +6,7 @@ function SpecialtyFirst({
   jobList,
   setPageNumber,
   pageNumber,
+  userName,
 }) {
   const { occupational, job, career } = userData;
   let btnStatus = Boolean(occupational && job && career);
@@ -14,7 +15,7 @@ function SpecialtyFirst({
     <div className="mainContents">
       <div className="mainText">
         아래 정보를 입력하면, <br />
-        누구누구님에게 찰떡궁합 회사를 매칭해드려요!
+        {userName}님에게 찰떡궁합 회사를 매칭해드려요!
       </div>
       <div className="occupationalGroup">
         <label className="occupationalSelector">

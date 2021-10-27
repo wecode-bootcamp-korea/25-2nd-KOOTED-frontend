@@ -7,6 +7,7 @@ import './Specialty.scss';
 function Specialty() {
   const history = useHistory();
 
+  const [userName, setUserName] = useState('');
   const [userData, setUserData] = useState({
     occupational: '',
     job: '',
@@ -14,33 +15,39 @@ function Specialty() {
     workplace: '',
     salary: 0,
   });
-
   const [pageNumber, setPageNumber] = useState(1);
   const [jobList, setJobList] = useState([]);
 
   useEffect(() => {
-    fetch('http://10.58.0.118:8000/posts')
+    fetch('http://10.58.0.243:8000/users', {
+      headers: {
+        Authorization: window.localStorage.getItem('accessToken'),
+      },
+    })
+      .then(result => result.json())
+      .then(data => setUserName(data.user_info.name));
+
+    fetch('http://10.58.0.243:8000/posts')
       .then(result => result.json())
       .then(data => setJobList(data.category_list));
   }, []);
 
   const sendData = () => {
-    fetch('http://10.58.0.118:8000/users', {
+    fetch('http://10.58.0.243:8000/users', {
       method: 'PUT',
-      header: {
-        accessToken: window.localStorage.getItem('accessToken'),
+      headers: {
+        Authorization: window.localStorage.getItem('accessToken'),
       },
       body: JSON.stringify({
-        job_group: Number(userData.occupational),
-        job: Number(userData.job),
+        job_id: Number(userData.job),
         working_year: Number(userData.career),
-        salary: userData.salary,
+        salary: Number(userData.salary),
       }),
     }).then(result => {
-      if (result === 'success') {
+      if (result.status === 200) {
         history.push('/');
       } else {
-        alert('error!');
+        alert(result);
       }
     });
   };
@@ -83,6 +90,7 @@ function Specialty() {
               jobList={jobList}
               pageNumber={pageNumber}
               setPageNumber={setPageNumber}
+              userName={userName}
             />
           )}
           {pageNumber === 2 && (

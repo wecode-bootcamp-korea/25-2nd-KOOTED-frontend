@@ -1,13 +1,13 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link, withRouter } from 'react-router-dom';
-import { useEffect } from 'react/cjs/react.development';
+
 import './Login.scss';
 
 function Login({ clickLoginBtn }) {
   const KAKAO_CODE_URL = `https://kauth.kakao.com/oauth/authorize?response_type=code&client_id=${process.env.REACT_APP_CLIENT_ID}&redirect_uri=${process.env.REACT_APP_REDIRECT_URL}`;
 
   const loginKakao = () => {
-    let kakaoLogin = window.open(KAKAO_CODE_URL);
+    window.open(KAKAO_CODE_URL);
   };
 
   useEffect(() => {
