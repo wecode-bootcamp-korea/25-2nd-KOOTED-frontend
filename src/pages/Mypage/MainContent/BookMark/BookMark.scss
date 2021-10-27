@@ -26,5 +26,7 @@
     display: flex;
     flex-wrap: wrap;
     padding: 10px 20px;
+    overflow-y: scroll;
+    height: 296px;
   }
 }
