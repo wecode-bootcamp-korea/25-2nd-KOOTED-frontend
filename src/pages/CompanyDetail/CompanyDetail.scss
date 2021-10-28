@@ -8,6 +8,11 @@
     width: 700px;
     margin-right: 20px;
 
+    .detailImage {
+      width: 100%;
+      object-fit: cover;
+    }
+
     .map {
       width: 500px;
       height: 450px;

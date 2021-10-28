@@ -5,7 +5,7 @@ import ValueGraph from './ValueGraph';
 import API from '../../../../config';
 import './Graph.scss';
 
-export default function Graph({ salaryList }) {
+export default function Graph({ salaryList, jobGroup, subGroup }) {
   const [salaryData, setSalaryData] = useState([]);
 
   useEffect(() => {
@@ -47,10 +47,10 @@ export default function Graph({ salaryList }) {
         </div>
       </div>
       <div className="textWrap">
-        <button className="job_group">개발</button>
-        <button className="job">프론트엔드 개발자</button>
+        <button className="job_group">{jobGroup}</button>
+        <button className="job">{subGroup}</button>
         <div className="avgWrap">
-          <p className="avgText">프론트엔드 개발자 평균 연봉</p>
+          <p className="avgText">{subGroup} 평균 연봉</p>
           <p className="avgValueWrap">
             <span className="avgValue">{valueToAVG(salaryData)}</span> 만원
           </p>

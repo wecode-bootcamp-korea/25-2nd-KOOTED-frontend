@@ -1,4 +1,4 @@
-const IP = 'http://10.58.0.243:8000';
+const IP = 'http://3.34.49.13:8000';
 const API = {
   users: `${IP}/users`,
   applicationInfo: `${IP}/applications`,

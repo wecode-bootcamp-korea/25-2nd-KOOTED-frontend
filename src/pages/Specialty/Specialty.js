@@ -30,7 +30,7 @@ function Specialty() {
 
     fetch(API.recruitInfo)
       .then(result => result.json())
-      .then(data => setJobList(data.category_list));
+      .then(data => setJobList(data.job_group_list));
   }, []);
 
   const sendData = () => {

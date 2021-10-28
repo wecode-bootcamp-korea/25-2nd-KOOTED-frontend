@@ -4,10 +4,11 @@ import './Footer.scss';
 
 export default function Footer({ filterTag, getFilterTagResult, setBtnClick }) {
   const handleBtnClick = () => {
-    const idList = [];
-    filterTag.forEach(tag => idList.push(tag.id));
+    let idList = '';
+    filterTag.forEach(tag => (idList += tag.id + 1 + ' '));
+    idList.slice(0, idList.length - 1);
 
-    fetch(`${API.recruitInfo}?tag=${idList.join('')}`)
+    fetch(`${API.recruitInfo}?tag=${idList}`)
       .then(res => res.json())
       .then(res => {
         getFilterTagResult(res.result);

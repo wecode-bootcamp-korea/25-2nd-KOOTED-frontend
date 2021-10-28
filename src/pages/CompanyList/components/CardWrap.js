@@ -7,20 +7,16 @@ export default function CardWrap({ companyData }) {
     <div className="CardWrap">
       <Link to={`/wd-detail/${companyData.id}`}>
         <div className="imgWrap">
-          <img
-            className="cardImg"
-            alt="cardImg"
-            src={companyData.thumbnamil_img}
-          />
+          <img className="cardImg" alt="cardImg" src={companyData.image_url} />
           <div className="heartWrap">
             <div className="heart">
               <i className="fas fa-heart" />
-              <span className="heartCount">{companyData.like_count}</span>
+              <span className="heartCount">{companyData.count}</span>
             </div>
           </div>
         </div>
         <div className="cardBody">
-          <p className="postName">{companyData.text_name}</p>
+          <p className="postName">{companyData.title}</p>
           <p className="postCompany">{companyData.company_name}</p>
           <p className="responseRate">응답률 매우 높음</p>
           <p className="postLocation">서울·한국</p>
