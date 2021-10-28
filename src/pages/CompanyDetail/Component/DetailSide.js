@@ -12,18 +12,20 @@ class DetailSide extends React.Component {
       resumeId: 0,
       postId: 0,
       isSelectedCheckBoxies: {},
-      bookmarkCount: 0,
     };
   }
 
   componentDidMount() {
+    const { postId } = this.props;
+
     this.setState({
-      postId: this.props.postId,
+      postId: postId,
     });
   }
 
   handleSubmit = () => {
     const { recommend, postId, resumeId } = this.state;
+    const { history } = this.props;
 
     fetch(API.applicationInfo, {
       method: 'POST',
@@ -39,7 +41,7 @@ class DetailSide extends React.Component {
       .then(res => res.json())
       .then(data => {
         alert('지원 완료되었습니다!');
-        this.props.history.push('/wd-mypage');
+        history.push('/wd-mypage');
       });
   };
 

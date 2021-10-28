@@ -6,7 +6,7 @@ class Footer extends React.Component {
     return (
       <footer className="Footer">
         <div className="footerMenu">
-          <img src="images/favicon.ico" alt="logo" />
+          <img src="/images/favicon.ico" alt="logo" />
           <span className="logo">kooted</span>
           <div className="footerMenuBar">
             <a className="footerMenuItem" href="/">

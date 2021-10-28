@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import UserInfo from './UserInfo/UserInfo';
 import API, { TOKEN } from '../../../config';
+import Logout from '../../../components/Logout/Logout';
 import './SideContent.scss';
 
-const SideContent = () => {
+const SideContent = ({ logoutModalStatus, toggleLogoutModal }) => {
   const [userInfo, setUserInfo] = useState([]);
   const { name, email, mobile_number } = userInfo;
 
@@ -31,7 +32,15 @@ const SideContent = () => {
           받은 제안<span className="count">0</span>
         </li>
       </ul>
-      <div className="accountSetting">계정 설정</div>
+      <div className="accountSetting" onClick={toggleLogoutModal}>
+        계정 설정
+      </div>
+      {logoutModalStatus && (
+        <Logout
+          logoutModalStatus={logoutModalStatus}
+          toggleLogoutModal={toggleLogoutModal}
+        />
+      )}
     </section>
   );
 };

@@ -4,7 +4,6 @@ import HashTag from './Component/HashTag';
 import AddInfo from './Component/AddInfo';
 import API, { TOKEN } from '../../config';
 import './CompanyDetail.scss';
-import CompanyImage from './Component/CompanyImage';
 
 export default class CompanyDetail extends React.Component {
   constructor() {
@@ -20,7 +19,8 @@ export default class CompanyDetail extends React.Component {
   }
 
   componentDidMount() {
-    fetch(`${API.recruitInfo}/${this.props.match.params.id}`)
+    const { match } = this.props;
+    fetch(`${API.recruitInfo}/${match.params.id}`)
       .then(res => res.json())
       .then(res => {
         this.setState({
@@ -30,7 +30,7 @@ export default class CompanyDetail extends React.Component {
         });
       });
 
-    fetch(`${API.getUserInfo}?post_id=${this.props.match.params.id}`, {
+    fetch(`${API.getUserInfo}?post_id=${match.params.id}`, {
       headers: {
         Authorization: TOKEN,
       },
@@ -60,10 +60,15 @@ export default class CompanyDetail extends React.Component {
     const { deadline, isSide, likeCount, result, isCheck, user, isMarked } =
       this.state;
 
+    const { match } = this.props;
     return (
       <div className="CompanyDetail">
         <main className="detailMain">
-          <CompanyImage image={result.image_url} />
+          <img
+            className="detailImage"
+            alt="company_image"
+            src={result.image_url && result.image_url[0].image_url}
+          />
           <section className="detailTitle">
             <header className="companyTitle">
               <p className="employment">{result.title}</p>
@@ -135,7 +140,7 @@ export default class CompanyDetail extends React.Component {
           handleButton={this.handleButton}
           user={user}
           isMarked={isMarked}
-          postId={this.props.match.params.id}
+          postId={match.params.id}
         />
       </div>
     );

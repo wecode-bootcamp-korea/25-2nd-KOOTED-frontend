@@ -1,0 +1,116 @@
+@import '../../styles/variables.scss';
+
+.LogoutModalWrap {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 900;
+
+  .background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 4;
+  }
+
+  .modalItems {
+    position: absolute;
+    width: 400px;
+    max-height: calc(100vh - 150px);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #ffffff;
+    border-radius: 5px;
+    overflow-y: auto;
+    z-index: 5;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    .modalHeader {
+      position: relative;
+      height: 54px;
+      padding: 16px 20px;
+      text-align: center;
+      vertical-align: middle;
+
+      .kootedLogo {
+        display: inline;
+        line-height: 1;
+        font-size: 23px;
+        font-weight: 700;
+      }
+
+      > button {
+        position: absolute;
+        padding: 15px;
+        width: 24;
+        height: 24;
+        top: 50%;
+        right: 0;
+        transform: translateY(-50%);
+        color: rgb(182, 182, 182);
+
+        > .fas {
+          font-size: 20px;
+        }
+      }
+    }
+  }
+
+  .logoutModalContent {
+    margin-bottom: 20px;
+    padding: 20px;
+    background-color: #ffffff;
+
+    .modalText {
+      margin: 24px 0 40px;
+      text-align: center;
+
+      > h1 {
+        font-size: 26px;
+        line-height: 1.54;
+        font-weight: 600;
+        color: #333333;
+      }
+
+      > h2 {
+        margin-top: 16px;
+        line-height: 1.5;
+        font-size: 16px;
+        color: #666666;
+      }
+    }
+    .logouts {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 20px;
+
+      .logoutBtn {
+        width: 40%;
+        height: 54px;
+        border: none;
+        border-radius: 27px;
+        background-color: $theme-color;
+        font-size: 15px;
+        color: #ffffff;
+
+        &:first-child {
+          margin-right: 30px;
+        }
+
+        > .far {
+          margin-right: 10px;
+          font-size: 20px;
+        }
+      }
+    }
+  }
+}

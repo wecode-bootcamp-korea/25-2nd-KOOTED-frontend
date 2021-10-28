@@ -14,6 +14,7 @@ export default class CompanyList extends React.Component {
       companyList: [],
       categoryList: [],
       salaryList: [],
+      categoryInfo: {},
     };
   }
 
@@ -47,20 +48,22 @@ export default class CompanyList extends React.Component {
   };
 
   componentDidMount() {
-    fetch(`${API.recruitInfo}?job-group=${this.props.match.params.id}`)
+    const { match } = this.props;
+
+    fetch(`${API.recruitInfo}?job-group=${match.params.id}`)
       .then(res => res.json())
       .then(data => {
         this.setState({
           companyList: data.result,
           categoryList: data.category_list,
           salaryList: data.salary_list,
+          categoryInfo: data.category_info,
         });
       });
   }
 
   render() {
-    const { companyList, categoryList, salaryList } = this.state;
-
+    const { companyList, categoryList, salaryList, categoryInfo } = this.state;
     return (
       <div className="CompanyList">
         <header className="categoryNav">
@@ -79,7 +82,11 @@ export default class CompanyList extends React.Component {
           </div>
         </header>
         <section className="categoryBody">
-          <Graph salaryList={salaryList} />
+          <Graph
+            salaryList={salaryList}
+            jobGroup={categoryInfo.job_group_name}
+            subGroup={categoryInfo.job_name}
+          />
           <article className="filterWrap">
             <div className="btnList">
               <FilterBtn
@@ -114,11 +121,3 @@ export default class CompanyList extends React.Component {
     );
   }
 }
-
-const CATEGORY_DATA = [
-  { id: 1, name: '개발', image_url: '#980000' },
-  { id: 2, name: '경영 비즈니스', image_url: '#997000' },
-  { id: 3, name: '마케팅 광고', image_url: '#6B9900' },
-  { id: 4, name: '디자인', image_url: '#008299' },
-  { id: 5, name: '영업', image_url: '#003399' },
-];

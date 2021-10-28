@@ -29,7 +29,7 @@ function SpecialtyFirst({
             <option value="" disabled hidden>
               선택해 주세요.
             </option>
-            {jobList.map(({ id, name }) => (
+            {jobList?.map(({ id, name }) => (
               <option key={id} value={id}>
                 {name}
               </option>
@@ -51,7 +51,7 @@ function SpecialtyFirst({
               <option value="" disabled hidden>
                 선택해 주세요.
               </option>
-              {jobList[userData.occupational - 1]?.job_list.map(
+              {jobList[userData.occupational - 1].job_list.map(
                 ({ id, name }) => (
                   <option key={id} value={id}>
                     {name}

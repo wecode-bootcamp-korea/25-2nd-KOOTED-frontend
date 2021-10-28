@@ -9,10 +9,10 @@ class Main extends React.Component {
         <div className="mainStart">
           <h1 className="introMainText">
             직장인의 커리어 여정을 <br />
-            행복하게, 원티드
+            행복하게, 쿠티드
           </h1>
           <h5 className="introSubText">
-            지금 원티드와 커리어 여정을 시작하세요.
+            지금 쿠티드와 커리어 여정을 시작하세요.
           </h5>
           <BtnStart />
         </div>
@@ -46,7 +46,7 @@ class Main extends React.Component {
           <div className="mainMiddleContent">
             <i className="fas fa-glass-cheers fa-9x" />
             <div className="contentText">
-              원티드와 요즘 직장인이
+              쿠티드와 요즘 직장인이
               <br />
               만드는 행복
               <span>
@@ -61,11 +61,11 @@ class Main extends React.Component {
           <div className="contentText mainEndText">
             커리어 성장과 행복을 위한 여정,
             <br />
-            지금 원티드에서 시작하세요.
+            지금 쿠티드에서 시작하세요.
             <span>
               200만 직장인과 10,000개 기업이
               <br />
-              원티드와 커리어 여정을 함께합니다.
+              쿠티드와 커리어 여정을 함께합니다.
             </span>
             <BtnStart />
           </div>
