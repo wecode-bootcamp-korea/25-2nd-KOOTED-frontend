@@ -1,10 +1,10 @@
 .CategoryList {
   display: table-cell;
-  margin-right: 20px;
+  margin-right: 40px;
 
   .imgCard {
     position: relative;
-    width: 120px;
+    width: 170px;
     height: 60px;
     border-radius: 5px;
     background-color: #d1d1d1;
@@ -12,7 +12,7 @@
     background-position: 50%;
 
     .cardTag {
-      width: 120px;
+      width: 170px;
       height: 60px;
       border-radius: 5px;
     }
@@ -21,10 +21,10 @@
       position: absolute;
       top: 25px;
       right: 0px;
-      width: 120px;
+      width: 170px;
       color: #fff;
       text-align: center;
-      font-size: 14px;
+      font-size: 16px;
       font-weight: 400;
       z-index: 1;
     }

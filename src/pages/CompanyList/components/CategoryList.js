@@ -12,9 +12,9 @@ class CategoryList extends Component {
           <div className="imgCard">
             <p
               className="cardTag"
-              style={{ backgroundColor: categorys.img_color }}
+              style={{ backgroundColor: categorys.image_url }}
             />
-            <span className="cardText">{categorys.job_name}</span>
+            <span className="cardText">{categorys.name}</span>
           </div>
         </Link>
       </li>

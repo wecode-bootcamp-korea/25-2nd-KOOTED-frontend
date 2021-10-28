@@ -10,7 +10,6 @@ export default class CompanyList extends React.Component {
   constructor() {
     super();
     this.state = {
-      categoryInfo: [],
       companyList: [],
     };
   }
@@ -27,25 +26,17 @@ export default class CompanyList extends React.Component {
   };
 
   componentDidMount() {
-    fetch('/data/companyList/ListNav.json')
+    fetch('http://10.58.0.243:8000/posts?job=5')
       .then(res => res.json())
-      .then(category =>
+      .then(listData =>
         this.setState({
-          categoryInfo: category.CATEGORY_LIST,
-        })
-      );
-
-    fetch('/data/companyList/Company.json')
-      .then(res => res.json())
-      .then(company =>
-        this.setState({
-          companyList: company.COMPANY_LIST,
+          companyList: listData.result,
         })
       );
   }
 
   render() {
-    const { categoryInfo, companyList } = this.state;
+    const { companyList } = this.state;
 
     return (
       <div className="CompanyList">
@@ -53,11 +44,8 @@ export default class CompanyList extends React.Component {
           <div className="categoryNavWrap">
             <h2 className="navText">전체 &gt; 개발 &gt; 웹 개발자</h2>
             <ul className="categoryLocation">
-              {categoryInfo.map(category => (
-                <CategoryList key={category.id} categorys={category} />
-              ))}
-              {categoryInfo.map(category => (
-                <CategoryList key={category.id} categorys={category} />
+              {CATEGORY_DATA.map((category, idx) => (
+                <CategoryList key={idx} categorys={category} />
               ))}
             </ul>
           </div>
@@ -94,3 +82,11 @@ export default class CompanyList extends React.Component {
     );
   }
 }
+
+const CATEGORY_DATA = [
+  { id: 1, name: '개발', image_url: '#980000' },
+  { id: 2, name: '경영 비즈니스', image_url: '#997000' },
+  { id: 3, name: '마케팅 광고', image_url: '#6B9900' },
+  { id: 4, name: '디자인', image_url: '#008299' },
+  { id: 5, name: '영업', image_url: '#003399' },
+];
