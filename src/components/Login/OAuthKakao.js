@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
+import API from '../../config';
 
 function OAuthKakao() {
   const location = useLocation();
@@ -11,7 +12,7 @@ function OAuthKakao() {
     fetch(KAKAO_TOKEN_URL)
       .then(result => result.json())
       .then(data => {
-        fetch('http://10.58.0.243:8000/users/kakao', {
+        fetch(`${API.users}/kakao`, {
           headers: {
             Authorization: data.access_token,
           },

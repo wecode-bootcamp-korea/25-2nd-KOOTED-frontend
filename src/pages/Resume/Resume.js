@@ -2,9 +2,8 @@ import React, { useState, useEffect } from 'react';
 import ResumeForm from './ResumeForm/ResumeForm';
 import CareerListItem from './CareerListItem/CareerListItem';
 import SkillTag from './SkillTag/SkillTag';
+import API, { TOKEN } from '../../config';
 import './Resume.scss';
-
-const TOKEN = localStorage.getItem('token');
 
 // 스킬 태그 리스트
 const skillList = [
@@ -44,7 +43,7 @@ const Resume = ({ location, match, history }) => {
   // 컴포넌트 렌더 시: 새로 작성일 때는 유저 정보만, 수정일 때는 원래 적었던 정보 모두 GET
   useEffect(() => {
     if (location.state === 'update') {
-      fetch(`http://10.58.0.243:8000/resume/${match.params.id}`, {
+      fetch(`${API.resume}/${match.params.id}`, {
         headers: {
           Authorization: TOKEN,
         },
@@ -63,7 +62,7 @@ const Resume = ({ location, match, history }) => {
           setTagList(resume_info.skills);
         });
     } else {
-      fetch(`http://10.58.0.243:8000/users`, {
+      fetch(API.users, {
         headers: {
           Authorization: TOKEN,
         },
@@ -122,7 +121,7 @@ const Resume = ({ location, match, history }) => {
     setWritingStatus('작성 완료');
 
     if (location.state === 'update') {
-      fetch(`http://10.58.0.243:8000/resume/${match.params.id}`, {
+      fetch(`${API.resume}/${match.params.id}`, {
         method: 'PUT',
         headers: {
           Authorization: TOKEN,
@@ -136,8 +135,6 @@ const Resume = ({ location, match, history }) => {
               id: 1,
               company_name: companyName,
               duty: duty,
-              date_of_joining: dateOfJoining,
-              date_of_resigning: dateOfResigning,
               in_office: isChecked,
             },
           ],
@@ -146,7 +143,7 @@ const Resume = ({ location, match, history }) => {
         }),
       }).then(res => res.json());
     } else {
-      fetch(`http://10.58.0.243:8000/resume`, {
+      fetch(API.resume, {
         method: 'POST',
         headers: {
           Authorization: TOKEN,
@@ -171,7 +168,8 @@ const Resume = ({ location, match, history }) => {
       }).then(res => res.json());
     }
 
-    history.push('/wd-resume-list');
+    //history.push('/wd-resume-list');
+    window.location.replace('/wd-resume-list');
   };
 
   return (

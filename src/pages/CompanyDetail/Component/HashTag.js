@@ -9,10 +9,10 @@ export default class HashTag extends React.Component {
       <article className="HashTag">
         <ul className="hashTagList">
           {tag &&
-            tag.map(({ id, name }) => {
+            tag.map((el, index) => {
               return (
-                <li className="hashTagContents" key={id}>
-                  <div className="hashTagName">#{name}</div>
+                <li className="hashTagContents" key={index}>
+                  <div className="hashTagName">#{el.name}</div>
                 </li>
               );
             })}

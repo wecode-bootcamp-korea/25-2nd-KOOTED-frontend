@@ -5,7 +5,7 @@ import './CardWrap.scss';
 export default function CardWrap({ companyData }) {
   return (
     <div className="CardWrap">
-      <Link to="/wd-detail">
+      <Link to={`/wd-detail/${companyData.id}`}>
         <div className="imgWrap">
           <img
             className="cardImg"

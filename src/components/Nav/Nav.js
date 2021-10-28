@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import SubMenu from './SubMenu/SubMenu';
 import Login from '../Login/Login';
+import { TOKEN } from '../../config';
 import './Nav.scss';
 
 class Nav extends React.Component {
@@ -29,7 +30,6 @@ class Nav extends React.Component {
   };
 
   render() {
-    const TOKEN = localStorage.getItem('accessToken');
     const { isMenuVisible, isLoginClick } = this.state;
 
     return (
@@ -43,7 +43,7 @@ class Nav extends React.Component {
             onMouseOver={this.handleMouseOver}
             onMouseOut={this.handleMouseOut}
           >
-            <Link to="/wd-list">탐색</Link>
+            <Link to="/wd-list/1">탐색</Link>
           </li>
           <li className="menuItem explore">
             <Link to="/">커리어 성장</Link>

@@ -24,8 +24,8 @@ class Routes extends React.Component {
           <Route path="/oauth" component={OAuthKakao} />
           <>
             <Route exact path="/" component={Main} />
-            <Route exact path="/wd-list" component={CompanyList} />
-            <Route exact path="/wd-detail" component={CompanyDetail} />
+            <Route exact path="/wd-list/:id" component={CompanyList} />
+            <Route exact path="/wd-detail/:id" component={CompanyDetail} />
             <Route exact path="/wd-mypage" component={Mypage} />
             <Footer />
           </>

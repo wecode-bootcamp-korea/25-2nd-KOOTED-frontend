@@ -5,7 +5,12 @@ import BodyLocation from './Filters/BodyLocation';
 import BodyCareer from './Filters/BodyCareer';
 import './FilterBtn.scss';
 
-export default function FilterBtn({ btnName, btnTextFind, btnText }) {
+export default function FilterBtn({
+  btnName,
+  btnTextFind,
+  btnText,
+  getFilterTagResult,
+}) {
   const [btnClick, setBtnClick] = useState(false);
 
   const isClickFilterBtn = () => {
@@ -27,7 +32,12 @@ export default function FilterBtn({ btnName, btnTextFind, btnText }) {
           isClickFilterBtn={isClickFilterBtn}
         >
           <div className="ModalBody">
-            {btnName === '태그' && <BodyTags />}
+            {btnName === '태그' && (
+              <BodyTags
+                getFilterTagResult={getFilterTagResult}
+                setBtnClick={setBtnClick}
+              />
+            )}
             {btnName === '지역' && <BodyLocation />}
             {btnName === '경력' && <BodyCareer />}
           </div>

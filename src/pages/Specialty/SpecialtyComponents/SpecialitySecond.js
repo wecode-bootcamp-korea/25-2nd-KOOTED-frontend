@@ -1,8 +1,8 @@
 import React from 'react';
 
-function SpecialtySecond({ userData, inputData, sendData }) {
+function SpecialtySecond({ userData, inputData, sendData, inputNumberFormat }) {
   const { workplace, salary } = userData;
-  let btnStatus = Boolean(workplace && salary && !isNaN(salary));
+  let btnStatus = Boolean(workplace && salary);
 
   return (
     <div className="mainContents">
@@ -28,10 +28,9 @@ function SpecialtySecond({ userData, inputData, sendData }) {
             name="salary"
             className="input salary"
             placeholder="연봉을 입력해 주세요. (만원)"
-            onKeyUp={e =>
-              (e.target.value = e.target.value.replace(/[^0-9]/g, ''))
-            }
+            onKeyUp={inputNumberFormat}
             onChange={inputData}
+            value={salary}
           />
         </label>
       </div>

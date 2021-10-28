@@ -2,18 +2,16 @@ import React, { useState, useEffect } from 'react';
 import ValueNum from './ValueNum';
 import ValueLine from './ValueLine';
 import ValueGraph from './ValueGraph';
+import API from '../../../../config';
 import './Graph.scss';
 
-export default function Graph() {
+export default function Graph({ salaryList }) {
   const [salaryData, setSalaryData] = useState([]);
 
   useEffect(() => {
-    fetch('/data/companyList/Graph.json')
-      .then(res => res.json())
-      .then(data => setSalaryData(data.salary_list));
-
+    setSalaryData(salaryList);
     valueToAVG(salaryData);
-  }, []);
+  }, [salaryData, salaryList]);
 
   const valueToAVG = salaryData => {
     let floatToIntArr = salaryData.map(data =>
