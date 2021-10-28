@@ -3,7 +3,7 @@ import TagData from './TagData';
 import Footer from './Footer';
 import './BodyTags.scss';
 
-export default function BodyTags() {
+export default function BodyTags({ getFilterTagResult, setBtnClick }) {
   const [tagList] = useState(TAG_LIST);
   const [, setChoiceTagID] = useState(1);
   const [clickValue, setClickValue] = useState(false);
@@ -47,7 +47,11 @@ export default function BodyTags() {
           </p>
         </div>
       </div>
-      <Footer />
+      <Footer
+        filterTag={filterTag}
+        getFilterTagResult={getFilterTagResult}
+        setBtnClick={setBtnClick}
+      />
     </>
   );
 }

@@ -1,16 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import BookMarkItem from './BookMarkItem/BookMarkItem';
+import API, { TOKEN } from '../../../../config';
 import './BookMark.scss';
-
-const API = localStorage.getItem('token');
 
 const BookMark = () => {
   const [bookMarkList, setBookMarkList] = useState([]);
 
   useEffect(() => {
-    fetch('http://10.58.0.243:8000/users', {
+    fetch(API.users, {
       headers: {
-        Authorization: API,
+        Authorization: TOKEN,
       },
     })
       .then(res => res.json())

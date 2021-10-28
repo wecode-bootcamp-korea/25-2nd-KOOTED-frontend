@@ -8,7 +8,7 @@
     width: 28px;
     height: 190px;
     background-color: rgba(73, 149, 103, 0.9);
-    animation: stack 2s 1;
+    animation: stack 1s 1 forwards;
 
     @keyframes stack {
       0% {

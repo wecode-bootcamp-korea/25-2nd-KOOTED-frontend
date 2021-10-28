@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 import SpecialtyFirst from './SpecialtyComponents/SpecialtyFirst';
 import SpecialtySecond from './SpecialtyComponents/SpecialitySecond';
+import API, { TOKEN } from '../../config';
 import './Specialty.scss';
 
 function Specialty() {
@@ -13,35 +14,35 @@ function Specialty() {
     job: '',
     career: '',
     workplace: '',
-    salary: 0,
+    salary: '',
   });
   const [pageNumber, setPageNumber] = useState(1);
   const [jobList, setJobList] = useState([]);
 
   useEffect(() => {
-    fetch('http://10.58.0.243:8000/users', {
+    fetch(API.users, {
       headers: {
-        Authorization: window.localStorage.getItem('accessToken'),
+        Authorization: TOKEN,
       },
     })
       .then(result => result.json())
       .then(data => setUserName(data.user_info.name));
 
-    fetch('http://10.58.0.243:8000/posts')
+    fetch(API.recruitInfo)
       .then(result => result.json())
       .then(data => setJobList(data.category_list));
   }, []);
 
   const sendData = () => {
-    fetch('http://10.58.0.243:8000/users', {
+    fetch(API.users, {
       method: 'PUT',
       headers: {
-        Authorization: window.localStorage.getItem('accessToken'),
+        Authorization: TOKEN,
       },
       body: JSON.stringify({
         job_id: Number(userData.job),
         working_year: Number(userData.career),
-        salary: Number(userData.salary),
+        salary: Number(uncomma(userData.salary)),
       }),
     }).then(result => {
       if (result.status === 200) {
@@ -51,6 +52,18 @@ function Specialty() {
       }
     });
   };
+
+  const inputNumberFormat = () => {
+    setUserData({ ...userData, salary: comma(uncomma(userData.salary)) });
+  };
+  function comma(str) {
+    str = String(str);
+    return str.replace(/(\d)(?=(?:\d{3})+(?!\d))/g, '$1, ');
+  }
+  function uncomma(str) {
+    str = String(str);
+    return str.replace(/[^\d]+/g, '');
+  }
 
   const inputData = e => {
     const { name, value } = e.target;
@@ -98,6 +111,7 @@ function Specialty() {
               userData={userData}
               inputData={inputData}
               sendData={sendData}
+              inputNumberFormat={inputNumberFormat}
             />
           )}
         </div>

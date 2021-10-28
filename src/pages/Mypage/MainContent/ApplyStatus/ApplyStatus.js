@@ -1,15 +1,14 @@
 import React, { useState, useEffect } from 'react';
+import API, { TOKEN } from '../../../../config';
 import './ApplyStatus.scss';
-
-const API = localStorage.getItem('token');
 
 const ApplyStatus = () => {
   const [applyStatus, setApplyStatus] = useState([]);
 
   useEffect(() => {
-    fetch('http://10.58.0.243:8000/users', {
+    fetch(API.users, {
       headers: {
-        Authorization: API,
+        Authorization: TOKEN,
       },
     })
       .then(res => res.json())
@@ -30,7 +29,7 @@ const ApplyStatus = () => {
           <span className="count">2</span>최종 합격
         </li>
         <li className="item">
-          <span className="count">2</span>불합격
+          <span className="count">0</span>불합격
         </li>
       </ul>
     </section>

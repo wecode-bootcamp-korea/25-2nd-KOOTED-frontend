@@ -1,17 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import UserInfo from './UserInfo/UserInfo';
+import API, { TOKEN } from '../../../config';
 import './SideContent.scss';
-
-const API = localStorage.getItem('token');
 
 const SideContent = () => {
   const [userInfo, setUserInfo] = useState([]);
   const { name, email, mobile_number } = userInfo;
 
   useEffect(() => {
-    fetch('http://10.58.0.243:8000/users', {
+    fetch(API.users, {
       headers: {
-        Authorization: API,
+        Authorization: TOKEN,
       },
     })
       .then(res => res.json())

@@ -1,8 +1,7 @@
 import React from 'react';
 import ResumeItem from './ResumeItem/ResumeItem';
+import API, { TOKEN } from '../../config';
 import './ResumeList.scss';
-
-const TOKEN = localStorage.getItem('token');
 
 class ResumeList extends React.Component {
   state = {
@@ -10,7 +9,7 @@ class ResumeList extends React.Component {
   };
 
   getResumeList = () => {
-    fetch('http://10.58.0.243:8000/resumes', {
+    fetch(API.getUserInfo, {
       headers: {
         Authorization: TOKEN,
       },
@@ -22,7 +21,7 @@ class ResumeList extends React.Component {
   };
 
   deleteResumeList = id => {
-    fetch(`http://10.58.0.243:8000/resume/${id}`, {
+    fetch(`${API.resume}/${id}`, {
       method: 'DELETE',
       headers: {
         Authorization: TOKEN,

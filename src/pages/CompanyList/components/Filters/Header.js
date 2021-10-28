@@ -1,4 +1,5 @@
 import React, { useEffect, useRef } from 'react';
+import Footer from './Footer';
 import './Header.scss';
 
 export default function Header({

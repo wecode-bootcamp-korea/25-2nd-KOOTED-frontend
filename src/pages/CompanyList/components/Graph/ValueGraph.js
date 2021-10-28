@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './ValueGraph.scss';
 
 export default function ValueGraph({ careerYears, totalSalary }) {

@@ -2,7 +2,7 @@ import React from 'react';
 import DetailSide from './Component/DetailSide';
 import HashTag from './Component/HashTag';
 import AddInfo from './Component/AddInfo';
-
+import API, { TOKEN } from '../../config';
 import './CompanyDetail.scss';
 import CompanyImage from './Component/CompanyImage';
 
@@ -20,7 +20,7 @@ export default class CompanyDetail extends React.Component {
   }
 
   componentDidMount() {
-    fetch('http://10.58.0.243:8000/posts/1')
+    fetch(`${API.recruitInfo}/${this.props.match.params.id}`)
       .then(res => res.json())
       .then(res => {
         this.setState({
@@ -30,17 +30,16 @@ export default class CompanyDetail extends React.Component {
         });
       });
 
-    fetch('http://10.58.0.243:8000/resumes?post_id=1', {
+    fetch(`${API.getUserInfo}?post_id=${this.props.match.params.id}`, {
       headers: {
-        Authorization:
-          'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MTUwNX0.3a1IFLI2s9yvFRSWzDNDaYDh6DXrtNUtd6qdb2dXu4s',
+        Authorization: TOKEN,
       },
     })
       .then(res => res.json())
       .then(res => {
         this.setState({
           user: res.user,
-          isMarked: res.user.bookmark,
+          isMarked: res.user?.bookmark,
         });
       });
   }
@@ -136,6 +135,7 @@ export default class CompanyDetail extends React.Component {
           handleButton={this.handleButton}
           user={user}
           isMarked={isMarked}
+          postId={this.props.match.params.id}
         />
       </div>
     );

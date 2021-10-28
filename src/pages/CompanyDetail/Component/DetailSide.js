@@ -1,68 +1,61 @@
 import React from 'react';
+import { withRouter } from 'react-router-dom';
 import ResumeItemList from './ResumeItemList';
+import API, { TOKEN } from '../../../config';
 import './DetailSide.scss';
 
-export default class DetailSide extends React.Component {
+class DetailSide extends React.Component {
   constructor() {
     super();
     this.state = {
       recommend: '',
-      resumeId: 4,
-      postId: 1,
+      resumeId: 0,
+      postId: 0,
+      isSelectedCheckBoxies: {},
+      bookmarkCount: 0,
     };
+  }
+
+  componentDidMount() {
+    this.setState({
+      postId: this.props.postId,
+    });
   }
 
   handleSubmit = () => {
     const { recommend, postId, resumeId } = this.state;
-    fetch('http://10.58.0.243:8000/applications', {
+
+    fetch(API.applicationInfo, {
       method: 'POST',
       headers: {
-        Authorization:
-          'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MTUwNX0.3a1IFLI2s9yvFRSWzDNDaYDh6DXrtNUtd6qdb2dXu4s',
+        Authorization: TOKEN,
       },
       body: JSON.stringify({
         recommender: recommend,
         post_id: postId,
         resume_id: resumeId,
       }),
-    });
-  };
-
-  handleBookMarkDelete = () => {
-    const { postId } = this.state;
-    fetch('http://10.58.0.243:8000/posts/bookmarks', {
-      method: 'DELETE',
-      headers: {
-        Authorization:
-          'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MTUwNX0.3a1IFLI2s9yvFRSWzDNDaYDh6DXrtNUtd6qdb2dXu4s',
-      },
-      body: JSON.stringify({
-        post_id: postId,
-      }),
-    });
-  };
-
-  handleBookMarkPass = () => {
-    const { postId } = this.state;
-    fetch('http://10.58.0.243:8000/posts/bookmarks', {
-      method: 'POST',
-      headers: {
-        Authorization:
-          'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MTUwNX0.3a1IFLI2s9yvFRSWzDNDaYDh6DXrtNUtd6qdb2dXu4s',
-      },
-      body: JSON.stringify({
-        post_id: postId,
-      }),
-    });
+    })
+      .then(res => res.json())
+      .then(data => {
+        alert('지원 완료되었습니다!');
+        this.props.history.push('/wd-mypage');
+      });
   };
 
   handleBookMark = e => {
     const { postId } = this.state;
     const { isMarked } = this.props;
-    this.setState({
-      postId: postId,
+
+    fetch(`${API.recruitInfo}/bookmarks`, {
+      method: isMarked ? 'DELETE' : 'POST',
+      headers: {
+        Authorization: TOKEN,
+      },
+      body: JSON.stringify({
+        post_id: postId,
+      }),
     });
-    isMarked ? this.handleBookMarkDelete() : this.handleBookMarkPass();
   };
 
   handleRecommend = e => {
@@ -72,23 +65,27 @@ export default class DetailSide extends React.Component {
     });
   };
 
-  getResumeId = id => {
+  getResumeId = (id, status) => {
+    const { isSelectedCheckBoxies } = this.state;
     this.setState({
       resumeId: id,
+      isSelectedCheckBoxies: { ...isSelectedCheckBoxies, [id]: !status },
     });
   };
 
   render() {
+    const { isSelectedCheckBoxies } = this.state;
     const {
       result,
       isSide,
-      isCheck,
       likeCount,
       handleIcon,
       handleButton,
       user,
       isMarked,
     } = this.props;
+
+    const submitBtnValid = Object.values(isSelectedCheckBoxies).includes(true);
 
     return (
       <div className="DetailSide">
@@ -126,14 +123,7 @@ export default class DetailSide extends React.Component {
                 ) : (
                   <i className="far fa-bookmark" />
                 )}
-                <span
-                  className="bookMarkName"
-                  onClick={
-                    isMarked
-                      ? this.handleBookMarkDelete
-                      : this.handleBookMarkPass
-                  }
-                >
+                <span className="bookMarkName" onClick={this.handleBookMark}>
                   북마크하기
                 </span>
               </button>
@@ -180,16 +170,16 @@ export default class DetailSide extends React.Component {
               <p className="supsubTitle">지원 정보</p>
               <div className="subInput">
                 <span className="inputTitle">이름</span>
-                <input className="inputBox" value={user.name} />
+                <input className="inputBox" value={user?.name} />
               </div>
               <div className="subInput">
                 <span className="inputTitle">이메일</span>
-                <input className="inputBox" value={user.email} />
+                <input className="inputBox" value={user?.email} />
               </div>
               <div className="subInput">
                 <span className="inputTitle">연락처</span>
                 <button className="inputButton">
-                  <span className="inputText">{user.mobile_number}</span>
+                  <span className="inputText">{user?.mobile_number}</span>
                 </button>
               </div>
               <div className="subInput">
@@ -202,10 +192,7 @@ export default class DetailSide extends React.Component {
                 />
               </div>
               <p className="supsubTitle">첨부파일</p>
-              <ResumeItemList
-                isCheck={isCheck}
-                getResumeId={this.getResumeId}
-              />
+              <ResumeItemList getResumeId={this.getResumeId} />
 
               <p className="passRate">
                 원티드 이력서로 지원하면 최종 합격률이 40% 높아집니다.
@@ -214,8 +201,8 @@ export default class DetailSide extends React.Component {
           </article>
           <footer className="submit">
             <button
-              className={isCheck ? 'submitButton' : 'failSubmit'}
-              disabled={isCheck}
+              className={submitBtnValid ? 'submitButton' : 'failSubmit'}
+              disabled={!submitBtnValid}
               onClick={this.handleSubmit}
             >
               제출하기
@@ -226,3 +213,5 @@ export default class DetailSide extends React.Component {
     );
   }
 }
+
+export default withRouter(DetailSide);

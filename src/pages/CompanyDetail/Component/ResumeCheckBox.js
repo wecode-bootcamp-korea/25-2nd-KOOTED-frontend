@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-function ResumeItem({ id, title, date, status, getIsChecked, getResumeId }) {
+function ResumeItem({ id, title, date, status, getResumeId }) {
   const [isCheck, setIsCheck] = useState(false);
   const handleCheck = () => {
     setIsCheck(!isCheck);
@@ -13,7 +13,7 @@ function ResumeItem({ id, title, date, status, getIsChecked, getResumeId }) {
         className="selectResume"
         value={isCheck}
         onChange={handleCheck}
-        onClick={() => getResumeId(id)}
+        onClick={() => getResumeId(id, isCheck)}
       />
       <div className="resumeContent">
         <span className="userName">{title}</span>
