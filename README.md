@@ -16,7 +16,7 @@
 
 ## Technology
 - **Frontend**: `JSX` `React(CRA)`, `React Hook`, `Sass` (Library: `React-router-DOM`)
-- **Backend**: `Python`, `Django Web Framework`, `AWS`, `MySQL`
+- **Backend**: `Python`, `Django Web Framework`, `AWS`, `MySQL`, `JWT`
 - **Common**: 버전관리 `Git & GitHub`, 소통 `Slack`, 일정관리 [Trello](https://trello.com/b/7H4voa32/kooted)
 
 ## Main Function
