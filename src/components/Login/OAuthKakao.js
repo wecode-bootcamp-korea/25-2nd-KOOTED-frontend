@@ -12,6 +12,7 @@ function OAuthKakao() {
     fetch(KAKAO_TOKEN_URL)
       .then(result => result.json())
       .then(data => {
+        // console.log(data);
         fetch(`${API.users}/kakao`, {
           headers: {
             Authorization: data.access_token,
@@ -19,6 +20,7 @@ function OAuthKakao() {
         })
           .then(result => result.json())
           .then(data => {
+            // console.log(data);
             window.localStorage.setItem('accessToken', data.access_token);
             if (data.message === 'SUCCESS') {
               window.opener.location.href = '/';
